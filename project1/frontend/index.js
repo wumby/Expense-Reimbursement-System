@@ -14,8 +14,6 @@ loginBtn.addEventListener('click', async () => {
     let res = await fetch(URL, {
         method: 'POST',
         body: jsonString,
-        // credentials: 'include' // THIS IS VERY IMPORTANT IF you choose to use HttpSession. This is what tells the browser
-                                    // To retain the HttpSession cookie that will be subsequently sent in all later requests
     });
 
     // Get the token and store the token into localStorage
@@ -28,10 +26,10 @@ loginBtn.addEventListener('click', async () => {
 
         localStorage.setItem('user_id', user.id); // Keep track of the user id in the localStorage
 
-        if (user.userRole === 'trainer') {
-            window.location = '/trainer-page.html';
-        } else if (user.userRole === 'student') {
-            window.location = '/student-page.html';
+        if (user.userRole === 'Manager') {
+            window.location = '/manager-page.html';
+        } else if (user.userRole === 'Employee') {
+            window.location = '/employee-page.html';
         }
     } else {
         let errorMsg = await res.text();

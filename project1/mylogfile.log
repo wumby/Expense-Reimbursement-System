@@ -2712,3 +2712,490 @@ java.lang.NullPointerException: null
 22 03 2022 - 10:32:14.641 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
 22 03 2022 - 10:32:14.786 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 22 03 2022 - 10:32:14.786 [main] INFO  io.javalin.Javalin - Javalin started in 160ms \o/
+22 03 2022 - 13:12:31.738 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:12:31.748 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @661ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:12:31.749 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:12:31.764 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:12:31.915 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:12:31.915 [main] INFO  io.javalin.Javalin - Javalin started in 166ms \o/
+22 03 2022 - 13:17:13.073 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:17:13.084 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @709ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:17:13.085 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:17:13.101 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:17:13.258 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+22 03 2022 - 13:17:13.258 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+22 03 2022 - 13:17:13.266 [main] INFO  io.javalin.Javalin - Javalin has stopped
+22 03 2022 - 13:17:58.513 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:17:58.525 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @772ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:17:58.526 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:17:58.541 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:17:58.745 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+22 03 2022 - 13:17:58.745 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+22 03 2022 - 13:17:58.756 [main] INFO  io.javalin.Javalin - Javalin has stopped
+22 03 2022 - 13:18:42.111 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:18:42.120 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @807ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:18:42.122 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:18:42.141 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:18:42.278 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+22 03 2022 - 13:18:42.278 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+22 03 2022 - 13:18:42.285 [main] INFO  io.javalin.Javalin - Javalin has stopped
+22 03 2022 - 13:19:15.843 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:19:15.852 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @690ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:19:15.853 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:19:15.868 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:19:16.016 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:19:16.016 [main] INFO  io.javalin.Javalin - Javalin started in 163ms \o/
+22 03 2022 - 13:21:56.484 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:21:56.493 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @723ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:21:56.494 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:21:56.509 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:21:56.664 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:21:56.664 [main] INFO  io.javalin.Javalin - Javalin started in 170ms \o/
+22 03 2022 - 13:23:32.777 [JettyServerThreadPool-13] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "rs"
+  Position: 91
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
+	at com.revature.dao.ReimbursementDao.getAllReimbursements(ReimbursementDao.java:26)
+	at com.revature.service.ReimbursementService.getAllReimbursements(ReimbursementService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$0(ReimbursementController.java:34)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+22 03 2022 - 13:24:02.856 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:24:02.866 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @792ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:24:02.867 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:24:02.884 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:24:03.035 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:24:03.035 [main] INFO  io.javalin.Javalin - Javalin started in 168ms \o/
+22 03 2022 - 13:24:14.706 [JettyServerThreadPool-16] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "rs"
+  Position: 91
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
+	at com.revature.dao.ReimbursementDao.getAllReimbursements(ReimbursementDao.java:26)
+	at com.revature.service.ReimbursementService.getAllReimbursements(ReimbursementService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$0(ReimbursementController.java:34)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+22 03 2022 - 13:24:42.213 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:24:42.222 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @656ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:24:42.223 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:24:42.238 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:24:42.383 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:24:42.383 [main] INFO  io.javalin.Javalin - Javalin started in 160ms \o/
+22 03 2022 - 13:25:43.530 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:25:43.540 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @893ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:25:43.541 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:25:43.556 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:25:43.713 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:25:43.713 [main] INFO  io.javalin.Javalin - Javalin started in 172ms \o/
+22 03 2022 - 13:27:31.401 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:27:31.413 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1216ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:27:31.414 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:27:31.431 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:27:31.596 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:27:31.597 [main] INFO  io.javalin.Javalin - Javalin started in 184ms \o/
+22 03 2022 - 13:42:24.945 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 13:42:24.955 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @874ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 13:42:24.956 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 13:42:24.970 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 13:42:25.122 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 13:42:25.122 [main] INFO  io.javalin.Javalin - Javalin started in 167ms \o/
+22 03 2022 - 14:30:53.703 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 14:30:53.714 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @714ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 14:30:53.715 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 14:30:53.733 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 14:30:53.906 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 14:30:53.906 [main] INFO  io.javalin.Javalin - Javalin started in 192ms \o/
+22 03 2022 - 14:58:53.703 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 14:58:53.713 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1127ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 14:58:53.713 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 14:58:53.728 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 14:58:53.889 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 14:58:53.889 [main] INFO  io.javalin.Javalin - Javalin started in 176ms \o/
+22 03 2022 - 15:16:58.966 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:16:58.977 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @744ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:16:58.978 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:16:58.993 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:16:59.154 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:16:59.155 [main] INFO  io.javalin.Javalin - Javalin started in 178ms \o/
+22 03 2022 - 15:20:18.837 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:20:18.850 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @776ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:20:18.852 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:20:18.870 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:20:19.064 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:20:19.064 [main] INFO  io.javalin.Javalin - Javalin started in 213ms \o/
+22 03 2022 - 15:22:13.590 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:22:13.599 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @703ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:22:13.600 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:22:13.615 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:22:13.762 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:22:13.762 [main] INFO  io.javalin.Javalin - Javalin started in 162ms \o/
+22 03 2022 - 15:22:44.039 [JettyServerThreadPool-14] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: null
+	at com.revature.controller.ReimbursementController.lambda$new$1(ReimbursementController.java:43)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+22 03 2022 - 15:24:54.102 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:24:54.113 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @860ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:24:54.115 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:24:54.131 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:24:54.297 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:24:54.297 [main] INFO  io.javalin.Javalin - Javalin started in 183ms \o/
+22 03 2022 - 15:25:24.494 [JettyServerThreadPool-14] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: null
+	at com.revature.controller.ReimbursementController.lambda$new$1(ReimbursementController.java:43)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+22 03 2022 - 15:25:42.621 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:25:42.632 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @813ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:25:42.633 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:25:42.650 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:25:42.821 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:25:42.821 [main] INFO  io.javalin.Javalin - Javalin started in 188ms \o/
+22 03 2022 - 15:26:58.160 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:26:58.170 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @743ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:26:58.171 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:26:58.185 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:26:58.392 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:26:58.392 [main] INFO  io.javalin.Javalin - Javalin started in 222ms \o/
+22 03 2022 - 15:30:01.460 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 15:30:01.472 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @806ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 15:30:01.473 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 15:30:01.493 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 15:30:01.663 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 15:30:01.663 [main] INFO  io.javalin.Javalin - Javalin started in 190ms \o/
+22 03 2022 - 16:32:42.736 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 16:32:42.745 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @629ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 16:32:42.746 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 16:32:42.760 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 16:32:42.904 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 16:32:42.904 [main] INFO  io.javalin.Javalin - Javalin started in 158ms \o/

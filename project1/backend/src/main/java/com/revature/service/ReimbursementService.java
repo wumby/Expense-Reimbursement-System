@@ -37,4 +37,19 @@ public class ReimbursementService {
         return reimbursementDTOs;
     }
 
+    public List<ResponseReimbursementDTO> getReimbursementsByEmployee(int id) throws SQLException {
+        List<Reimbursement> reimbursements = this.reimbursementDao.getReimbursementsByEmployee(id);
+
+        List<ResponseReimbursementDTO> reimbursementDTOs = new ArrayList<>();
+
+        for (Reimbursement r : reimbursements) {
+            reimbursementDTOs.add(new ResponseReimbursementDTO(r.getId(), r.getReimbAmount(),r.getReimbSubmitted(),
+                    r.getReimbDescription(),r.getReimbAuthor(),r.getReimbStatusId(),r.getReimbTypeId(),
+                    r.getEmployee().getUsername(), r.getManager().getUsername()));
+
+
+        }
+
+        return reimbursementDTOs;
+    }
 }
