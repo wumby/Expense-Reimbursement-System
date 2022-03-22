@@ -3199,3 +3199,52 @@ java.lang.NullPointerException: null
 22 03 2022 - 16:32:42.760 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
 22 03 2022 - 16:32:42.904 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 22 03 2022 - 16:32:42.904 [main] INFO  io.javalin.Javalin - Javalin started in 158ms \o/
+22 03 2022 - 16:38:06.438 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 16:38:06.449 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @663ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 16:38:06.450 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 16:38:06.467 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 16:38:06.649 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 16:38:06.649 [main] INFO  io.javalin.Javalin - Javalin started in 199ms \o/
+22 03 2022 - 16:38:29.502 [JettyServerThreadPool-17] INFO  com.revature - POST request received for /login
+22 03 2022 - 16:38:31.190 [JettyServerThreadPool-12] INFO  com.revature - OPTIONS request received for /users/1/reimbursements
+22 03 2022 - 16:38:31.192 [JettyServerThreadPool-18] INFO  com.revature - GET request received for /users/1/reimbursements
+22 03 2022 - 16:40:45.387 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 16:40:45.400 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @724ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 16:40:45.401 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 16:40:45.423 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 16:40:45.604 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 16:40:45.604 [main] INFO  io.javalin.Javalin - Javalin started in 204ms \o/
+22 03 2022 - 16:41:02.384 [JettyServerThreadPool-17] INFO  com.revature - POST request received for /login
+22 03 2022 - 16:41:03.987 [JettyServerThreadPool-12] INFO  com.revature - OPTIONS request received for /users/1/reimbursements
+22 03 2022 - 16:41:03.990 [JettyServerThreadPool-16] INFO  com.revature - GET request received for /users/1/reimbursements
+22 03 2022 - 16:42:21.678 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+22 03 2022 - 16:42:21.690 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @700ms to org.eclipse.jetty.util.log.Slf4jLog
+22 03 2022 - 16:42:21.691 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22 03 2022 - 16:42:21.708 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+22 03 2022 - 16:42:21.929 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+22 03 2022 - 16:42:21.930 [main] INFO  io.javalin.Javalin - Javalin started in 240ms \o/
+22 03 2022 - 16:43:01.664 [JettyServerThreadPool-14] INFO  mylogfile.log - POST request received for /login
