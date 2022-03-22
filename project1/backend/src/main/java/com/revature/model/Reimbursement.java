@@ -2,24 +2,39 @@ package com.revature.model;
 
 import java.util.Objects;
 
-public class Assignment {
+public class Reimbursement {
 
     private int id;
-    private String assignmentName;
-    private int grade;
+    private int reimbAmount;
+    private String reimbSubmitted;
+    private String reimbResolved;
+    private String reimbDescription;
+    private String reimbReceipt;
+    private int reimbAuthor;
+    private int reimbResolver;
+    private int reimbStatusId;
+    private int reimbTypeId;
 
-    private User student;
-    private User grader;
 
-    public Assignment() {
+    private User employee;
+    private User manager;
+
+    public Reimbursement() {
     }
 
-    public Assignment(int id, String assignmentName, int grade, User student, User grader) {
+    public Reimbursement(int id, int reimbAmount, String reimbSubmitted, String reimbResolved, String reimbDescription, String reimbReceipt, int reimbAuthor, int reimbResolver, int reimbStatusId, int reimbTypeId, User employee, User manager) {
         this.id = id;
-        this.assignmentName = assignmentName;
-        this.grade = grade;
-        this.student = student;
-        this.grader = grader;
+        this.reimbAmount = reimbAmount;
+        this.reimbSubmitted = reimbSubmitted;
+        this.reimbResolved = reimbResolved;
+        this.reimbDescription = reimbDescription;
+        this.reimbReceipt = reimbReceipt;
+        this.reimbAuthor = reimbAuthor;
+        this.reimbResolver = reimbResolver;
+        this.reimbStatusId = reimbStatusId;
+        this.reimbTypeId = reimbTypeId;
+        this.employee = employee;
+        this.manager = manager;
     }
 
     public int getId() {
@@ -30,59 +45,111 @@ public class Assignment {
         this.id = id;
     }
 
-    public String getAssignmentName() {
-        return assignmentName;
+    public int getReimbAmount() {
+        return reimbAmount;
     }
 
-    public void setAssignmentName(String assignmentName) {
-        this.assignmentName = assignmentName;
+    public void setReimbAmount(int reimbAmount) {
+        this.reimbAmount = reimbAmount;
     }
 
-    public int getGrade() {
-        return grade;
+    public String getReimbSubmitted() {
+        return reimbSubmitted;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void setReimbSubmitted(String reimbSubmitted) {
+        this.reimbSubmitted = reimbSubmitted;
     }
 
-    public User getStudent() {
-        return student;
+    public String getReimbResolved() {
+        return reimbResolved;
     }
 
-    public void setStudent(User student) {
-        this.student = student;
+    public void setReimbResolved(String reimbResolved) {
+        this.reimbResolved = reimbResolved;
     }
 
-    public User getGrader() {
-        return grader;
+    public String getReimbDescription() {
+        return reimbDescription;
     }
 
-    public void setGrader(User grader) {
-        this.grader = grader;
+    public void setReimbDescription(String reimbDescription) {
+        this.reimbDescription = reimbDescription;
+    }
+
+    public String getReimbReceipt() {
+        return reimbReceipt;
+    }
+
+    public void setReimbReceipt(String reimbReceipt) {
+        this.reimbReceipt = reimbReceipt;
+    }
+
+    public int getReimbAuthor() {
+        return reimbAuthor;
+    }
+
+    public void setReimbAuthor(int reimbAuthor) {
+        this.reimbAuthor = reimbAuthor;
+    }
+
+    public int getReimbResolver() {
+        return reimbResolver;
+    }
+
+    public void setReimbResolver(int reimbResolver) {
+        this.reimbResolver = reimbResolver;
+    }
+
+    public int getReimbStatusId() {
+        return reimbStatusId;
+    }
+
+    public void setReimbStatusId(int reimbStatusId) {
+        this.reimbStatusId = reimbStatusId;
+    }
+
+    public int getReimbTypeId() {
+        return reimbTypeId;
+    }
+
+    public void setReimbTypeId(int reimbTypeId) {
+        this.reimbTypeId = reimbTypeId;
+    }
+
+    public User getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(User employee) {
+        this.employee = employee;
+    }
+
+    public User getManager() {
+        return manager;
+    }
+
+    public void setFinanceManager(User financeManager) {
+        this.manager = financeManager;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Assignment that = (Assignment) o;
-        return id == that.id && grade == that.grade && Objects.equals(assignmentName, that.assignmentName) && Objects.equals(student, that.student) && Objects.equals(grader, that.grader);
+        Reimbursement that = (Reimbursement) o;
+        return id == that.id && reimbAmount == that.reimbAmount && reimbAuthor == that.reimbAuthor && reimbResolver == that.reimbResolver && reimbStatusId == that.reimbStatusId && reimbTypeId == that.reimbTypeId && reimbSubmitted.equals(that.reimbSubmitted) && reimbResolved.equals(that.reimbResolved) && reimbDescription.equals(that.reimbDescription) && reimbReceipt.equals(that.reimbReceipt) && employee.equals(that.employee) && manager.equals(that.manager);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, assignmentName, grade, student, grader);
+        return Objects.hash(id, reimbAmount, reimbSubmitted, reimbResolved, reimbDescription, reimbReceipt,
+                reimbAuthor, reimbResolver, reimbStatusId, reimbTypeId, employee, manager);
     }
+
 
     @Override
     public String toString() {
-        return "Assignment{" +
-                "id=" + id +
-                ", assignmentName='" + assignmentName + '\'' +
-                ", grade=" + grade +
-                ", student=" + student +
-                ", grader=" + grader +
-                '}';
+        return "Reimbursement{" + "id=" + id + ", reimbAmount=" + reimbAmount + ", reimbSubmitted='" + reimbSubmitted + '\'' + ", reimbResolved='" + reimbResolved + '\'' + ", reimbDescription='" + reimbDescription + '\'' + ", reimbReceipt='" + reimbReceipt + '\'' + ", reimbAuthor=" + reimbAuthor + ", reimbResolver=" + reimbResolver + ", reimbStatusId=" + reimbStatusId + ", reimbTypeId=" + reimbTypeId + ", employee=" + employee + ", financeManager=" + manager + '}';
     }
 }

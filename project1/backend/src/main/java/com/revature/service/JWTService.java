@@ -9,6 +9,8 @@ import java.security.Key;
 
 public class JWTService {
 
+    private static JWTService instance;
+
     private Key key;
 
     // Instance initialization block
@@ -17,9 +19,18 @@ public class JWTService {
 //        byte[] secret = "my_secret_password".getBytes();
 //        key = Keys.hmacShaKeyFor(secret); // Create a key using
 //    }
-    public JWTService() {
-        byte[] secret = "my_secret_password_asdfasdfjkljclkvjl13432k2312jlkj3941809df".getBytes();
-        key = Keys.hmacShaKeyFor(secret); // Create a key using our secret password
+    private JWTService() {
+//        byte[] secret = "my_secret_password_asdfasdfjkljclkvjl13432k2312jlkj3941809df".getBytes();
+        key = Keys.secretKeyFor(SignatureAlgorithm.HS384); // Create a key using our secret password
+    }
+
+    // method
+    public static JWTService getInstance() {
+        if (JWTService.instance == null) {
+            JWTService.instance = new JWTService();
+        }
+
+        return JWTService.instance;
     }
 
     // Signing a JWT with the key

@@ -201,7 +201,7 @@ javax.security.auth.login.FailedLoginException: Invalid username and/or password
 16 03 2022 - 16:27:30.403 [JettyServerThreadPool-16] WARN  io.javalin.Javalin - Uncaught exception
 java.lang.NullPointerException: Parameter specified as non-null is null: method io.javalin.http.Context.json, parameter obj
 	at io.javalin.http.Context.json(Context.kt)
-	at com.revature.controller.AssignmentController.lambda$new$0(AssignmentController.java:12)
+	at com.revature.controller.ReimbursementController.lambda$new$0(AssignmentController.java:12)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -374,7 +374,7 @@ java.lang.IllegalArgumentException: JWT String argument cannot be null or empty.
 	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:610)
 	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
 	at com.revature.service.JWTService.parseJwt(JWTService.java:40)
-	at com.revature.controller.AssignmentController.lambda$new$0(AssignmentController.java:29)
+	at com.revature.controller.ReimbursementController.lambda$new$0(AssignmentController.java:29)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -522,7 +522,7 @@ java.lang.NumberFormatException: For input string: "abc"
 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
 	at java.lang.Integer.parseInt(Integer.java:580)
 	at java.lang.Integer.parseInt(Integer.java:615)
-	at com.revature.controller.AssignmentController.lambda$new$1(AssignmentController.java:52)
+	at com.revature.controller.ReimbursementController.lambda$new$1(AssignmentController.java:52)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -578,8 +578,8 @@ java.lang.NumberFormatException: For input string: "abc"
 17 03 2022 - 11:16:51.247 [main] INFO  io.javalin.Javalin - Javalin started in 935ms \o/
 17 03 2022 - 11:17:31.230 [JettyServerThreadPool-18] WARN  io.javalin.Javalin - Uncaught exception
 java.lang.NullPointerException: null
-	at com.revature.service.AssignmentService.getAllAssignments(AssignmentService.java:21)
-	at com.revature.controller.AssignmentController.lambda$new$0(AssignmentController.java:42)
+	at com.revature.service.ReimbursementService.getAllAssignments(AssignmentService.java:21)
+	at com.revature.controller.ReimbursementController.lambda$new$0(AssignmentController.java:42)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -708,9 +708,9 @@ java.lang.NullPointerException: null
 org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
 	at org.postgresql.jdbc.PgResultSet.getRawValue(PgResultSet.java:3092)
 	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2330)
-	at com.revature.dao.AssignmentDao.addAssignment(AssignmentDao.java:26)
-	at com.revature.service.AssignmentService.addAssignment(AssignmentService.java:25)
-	at com.revature.controller.AssignmentController.lambda$new$1(AssignmentController.java:66)
+	at com.revature.dao.ReimbursementDao.addAssignment(AssignmentDao.java:26)
+	at com.revature.service.ReimbursementService.addAssignment(AssignmentService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$1(AssignmentController.java:66)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -768,9 +768,9 @@ org.postgresql.util.PSQLException: No value specified for parameter 1.
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
-	at com.revature.dao.AssignmentDao.addAssignment(AssignmentDao.java:32)
-	at com.revature.service.AssignmentService.addAssignment(AssignmentService.java:25)
-	at com.revature.controller.AssignmentController.lambda$new$1(AssignmentController.java:66)
+	at com.revature.dao.ReimbursementDao.addAssignment(AssignmentDao.java:32)
+	at com.revature.service.ReimbursementService.addAssignment(AssignmentService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$1(AssignmentController.java:66)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -830,9 +830,9 @@ org.postgresql.util.PSQLException: ERROR: relation "students" does not exist
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
-	at com.revature.dao.AssignmentDao.addAssignment(AssignmentDao.java:33)
-	at com.revature.service.AssignmentService.addAssignment(AssignmentService.java:25)
-	at com.revature.controller.AssignmentController.lambda$new$1(AssignmentController.java:66)
+	at com.revature.dao.ReimbursementDao.addAssignment(AssignmentDao.java:33)
+	at com.revature.service.ReimbursementService.addAssignment(AssignmentService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$1(AssignmentController.java:66)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -887,9 +887,9 @@ org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps yo
 	at org.postgresql.jdbc.PgResultSet.getRawValue(PgResultSet.java:3092)
 	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2330)
 	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2779)
-	at com.revature.dao.AssignmentDao.addAssignment(AssignmentDao.java:36)
-	at com.revature.service.AssignmentService.addAssignment(AssignmentService.java:25)
-	at com.revature.controller.AssignmentController.lambda$new$1(AssignmentController.java:66)
+	at com.revature.dao.ReimbursementDao.addAssignment(AssignmentDao.java:36)
+	at com.revature.service.ReimbursementService.addAssignment(AssignmentService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$1(AssignmentController.java:66)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -983,7 +983,7 @@ org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps yo
 17 03 2022 - 13:53:37.670 [main] INFO  io.javalin.Javalin - Javalin started in 1001ms \o/
 17 03 2022 - 13:54:16.676 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
 java.lang.NullPointerException: null
-	at com.revature.controller.AssignmentController.lambda$new$2(AssignmentController.java:72)
+	at com.revature.controller.ReimbursementController.lambda$new$2(AssignmentController.java:72)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1029,9 +1029,9 @@ org.postgresql.util.PSQLException: ERROR: column "assignment_id" does not exist
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
-	at com.revature.dao.AssignmentDao.gradeAssignment(AssignmentDao.java:41)
-	at com.revature.service.AssignmentService.gradeAssignment(AssignmentService.java:29)
-	at com.revature.controller.AssignmentController.lambda$new$2(AssignmentController.java:87)
+	at com.revature.dao.ReimbursementDao.gradeAssignment(AssignmentDao.java:41)
+	at com.revature.service.ReimbursementService.gradeAssignment(AssignmentService.java:29)
+	at com.revature.controller.ReimbursementController.lambda$new$2(AssignmentController.java:87)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1101,7 +1101,7 @@ org.postgresql.util.PSQLException: ERROR: column "assignment_id" does not exist
 17 03 2022 - 13:57:02.646 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 17 03 2022 - 13:57:02.646 [main] INFO  io.javalin.Javalin - Javalin started in 782ms \o/
 17 03 2022 - 13:57:17.641 [JettyServerThreadPool-14] WARN  io.javalin.Javalin - Uncaught exception
-org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry for table "assignments"
+org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry for table "reimbursements"
   Hint: Perhaps you meant to reference the table alias "a".
   Position: 361
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
@@ -1111,9 +1111,9 @@ org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
-	at com.revature.dao.AssignmentDao.gradeAssignment(AssignmentDao.java:41)
-	at com.revature.service.AssignmentService.gradeAssignment(AssignmentService.java:29)
-	at com.revature.controller.AssignmentController.lambda$new$2(AssignmentController.java:87)
+	at com.revature.dao.ReimbursementDao.gradeAssignment(AssignmentDao.java:41)
+	at com.revature.service.ReimbursementService.gradeAssignment(AssignmentService.java:29)
+	at com.revature.controller.ReimbursementController.lambda$new$2(AssignmentController.java:87)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1164,7 +1164,7 @@ org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry
 17 03 2022 - 13:57:50.375 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 17 03 2022 - 13:57:50.375 [main] INFO  io.javalin.Javalin - Javalin started in 814ms \o/
 17 03 2022 - 13:57:56.817 [JettyServerThreadPool-24] WARN  io.javalin.Javalin - Uncaught exception
-org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry for table "assignments"
+org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry for table "reimbursements"
   Hint: Perhaps you meant to reference the table alias "a".
   Position: 355
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
@@ -1174,9 +1174,9 @@ org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
-	at com.revature.dao.AssignmentDao.gradeAssignment(AssignmentDao.java:41)
-	at com.revature.service.AssignmentService.gradeAssignment(AssignmentService.java:29)
-	at com.revature.controller.AssignmentController.lambda$new$2(AssignmentController.java:87)
+	at com.revature.dao.ReimbursementDao.gradeAssignment(AssignmentDao.java:41)
+	at com.revature.service.ReimbursementService.gradeAssignment(AssignmentService.java:29)
+	at com.revature.controller.ReimbursementController.lambda$new$2(AssignmentController.java:87)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1231,7 +1231,7 @@ java.lang.NumberFormatException: For input string: "abc"
 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
 	at java.lang.Integer.parseInt(Integer.java:580)
 	at java.lang.Integer.parseInt(Integer.java:615)
-	at com.revature.controller.AssignmentController.lambda$new$1(AssignmentController.java:60)
+	at com.revature.controller.ReimbursementController.lambda$new$1(AssignmentController.java:60)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1329,7 +1329,7 @@ java.lang.NumberFormatException: For input string: "abc"
 17 03 2022 - 15:38:41.396 [main] INFO  io.javalin.Javalin - Javalin started in 1321ms \o/
 17 03 2022 - 15:39:17.053 [JettyServerThreadPool-15] WARN  io.javalin.Javalin - Uncaught exception
 java.lang.NullPointerException: null
-	at com.revature.controller.AssignmentController.lambda$new$3(AssignmentController.java:93)
+	at com.revature.controller.ReimbursementController.lambda$new$3(AssignmentController.java:93)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1371,7 +1371,7 @@ java.lang.NullPointerException: null
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
 	at java.lang.Thread.run(Thread.java:750)
 17 03 2022 - 15:39:28.197 [JettyServerThreadPool-19] WARN  io.javalin.Javalin - Uncaught exception
-org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry for table "assignments"
+org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry for table "reimbursements"
   Hint: Perhaps you meant to reference the table alias "a".
   Position: 8
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
@@ -1381,9 +1381,9 @@ org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
-	at com.revature.dao.AssignmentDao.getAllAssignmentsByUserId(AssignmentDao.java:171)
-	at com.revature.service.AssignmentService.getAllAssignmentsByUserId(AssignmentService.java:25)
-	at com.revature.controller.AssignmentController.lambda$new$3(AssignmentController.java:106)
+	at com.revature.dao.ReimbursementDao.getAllAssignmentsByUserId(AssignmentDao.java:171)
+	at com.revature.service.ReimbursementService.getAllAssignmentsByUserId(AssignmentService.java:25)
+	at com.revature.controller.ReimbursementController.lambda$new$3(AssignmentController.java:106)
 	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
 	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
 	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
@@ -1438,3 +1438,17 @@ org.postgresql.util.PSQLException: ERROR: invalid reference to FROM-clause entry
 17 03 2022 - 15:39:53.961 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
 17 03 2022 - 15:39:54.816 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 17 03 2022 - 15:39:54.816 [main] INFO  io.javalin.Javalin - Javalin started in 898ms \o/
+21 03 2022 - 22:11:19.541 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 22:11:19.552 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @676ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 22:11:19.554 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 22:11:19.576 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 22:11:19.739 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 22:11:19.740 [main] INFO  io.javalin.Javalin - Javalin started in 187ms \o/

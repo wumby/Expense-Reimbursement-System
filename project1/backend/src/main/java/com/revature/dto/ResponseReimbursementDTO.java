@@ -2,24 +2,35 @@ package com.revature.dto;
 
 import java.util.Objects;
 
-public class ResponseAssignmentDTO {
+public class ResponseReimbursementDTO {
 
     private int id;
-    private String assignmentName;
-    private int grade;
+    private int reimbAmount;
+    private String reimbSubmitted;
+    private String reimbDescription;
+    private int reimbAuthor;
+    private int reimbStatusId;
+    private int reimbTypeId;
 
-    private String studentUsername;
-    private String graderUsername;
 
-    public ResponseAssignmentDTO() {
+    private String employeeUsername;
+    private String managerUsername;
+
+    public ResponseReimbursementDTO() {
     }
 
-    public ResponseAssignmentDTO(int id, String assignmentName, int grade, String studentUsername, String graderUsername) {
+    public ResponseReimbursementDTO(int id, int reimbAmount, String reimbSubmitted,
+                                    String reimbDescription, int reimbAuthor,
+                                    int reimbStatusId, int reimbTypeId, String employeeUsername,String managerUsername) {
         this.id = id;
-        this.assignmentName = assignmentName;
-        this.grade = grade;
-        this.studentUsername = studentUsername;
-        this.graderUsername = graderUsername;
+        this.reimbAmount = reimbAmount;
+        this.reimbSubmitted = reimbSubmitted;
+        this.reimbDescription = reimbDescription;
+        this.reimbAuthor = reimbAuthor;
+        this.reimbStatusId = reimbStatusId;
+        this.reimbTypeId = reimbTypeId;
+        this.employeeUsername = employeeUsername;
+        this.managerUsername = managerUsername;
     }
 
     public int getId() {
@@ -30,59 +41,90 @@ public class ResponseAssignmentDTO {
         this.id = id;
     }
 
-    public String getAssignmentName() {
-        return assignmentName;
+    public int getReimbAmount() {
+        return reimbAmount;
     }
 
-    public void setAssignmentName(String assignmentName) {
-        this.assignmentName = assignmentName;
+    public void setReimbAmount(int reimbAmount) {
+        this.reimbAmount = reimbAmount;
     }
 
-    public int getGrade() {
-        return grade;
+    public String getReimbSubmitted() {
+        return reimbSubmitted;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void setReimbSubmitted(String reimbSubmitted) {
+        this.reimbSubmitted = reimbSubmitted;
     }
 
-    public String getStudentUsername() {
-        return studentUsername;
+
+    public String getReimbDescription() {
+        return reimbDescription;
     }
 
-    public void setStudentUsername(String studentUsername) {
-        this.studentUsername = studentUsername;
+    public void setReimbDescription(String reimbDescription) {
+        this.reimbDescription = reimbDescription;
     }
 
-    public String getGraderUsername() {
-        return graderUsername;
+
+    public int getReimbAuthor() {
+        return reimbAuthor;
     }
 
-    public void setGraderUsername(String graderUsername) {
-        this.graderUsername = graderUsername;
+    public void setReimbAuthor(int reimbAuthor) {
+        this.reimbAuthor = reimbAuthor;
     }
+
+
+    public int getReimbStatusId() {
+        return reimbStatusId;
+    }
+
+    public void setReimbStatusId(int reimbStatusId) {
+        this.reimbStatusId = reimbStatusId;
+    }
+
+    public int getReimbTypeId() {
+        return reimbTypeId;
+    }
+
+    public void setReimbTypeId(int reimbTypeId) {
+        this.reimbTypeId = reimbTypeId;
+    }
+
+    public String getEmployeeUsername() {
+        return employeeUsername;
+    }
+
+    public void setEmployeeUsername(String employeeUsername) {
+        this.employeeUsername = employeeUsername;
+    }
+
+    public String getManagerUsername() {
+        return managerUsername;
+    }
+
+    public void setManagerUsername(String managerUsername) {
+        this.managerUsername = managerUsername;
+    }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ResponseAssignmentDTO that = (ResponseAssignmentDTO) o;
-        return id == that.id && grade == that.grade && Objects.equals(assignmentName, that.assignmentName) && Objects.equals(studentUsername, that.studentUsername) && Objects.equals(graderUsername, that.graderUsername);
+        ResponseReimbursementDTO that = (ResponseReimbursementDTO) o;
+        return id == that.id && reimbAmount == that.reimbAmount && reimbAuthor == that.reimbAuthor  && reimbStatusId == that.reimbStatusId && reimbTypeId == that.reimbTypeId && reimbSubmitted.equals(that.reimbSubmitted) && reimbDescription.equals(that.reimbDescription) && employeeUsername.equals(that.employeeUsername) && managerUsername.equals(that.managerUsername);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, assignmentName, grade, studentUsername, graderUsername);
+        return Objects.hash(id, reimbAmount, reimbSubmitted, reimbDescription,
+                reimbAuthor,  reimbStatusId, reimbTypeId, employeeUsername, managerUsername);
     }
 
     @Override
     public String toString() {
-        return "GetAssignmentDTO{" +
-                "id=" + id +
-                ", assignmentName='" + assignmentName + '\'' +
-                ", grade=" + grade +
-                ", studentUsername='" + studentUsername + '\'' +
-                ", graderUsername='" + graderUsername + '\'' +
-                '}';
+        return "ResponseReimbursementDTO{" + "id=" + id + ", reimbAmount=" + reimbAmount + ", reimbSubmitted='" + reimbSubmitted + '\'' + ", reimbResolved='" +  ", reimbDescription='" + reimbDescription + '\'' + ", reimbAuthor=" + reimbAuthor + ", reimbResolver="  + ", reimbStatusId=" + reimbStatusId + ", reimbTypeId=" + reimbTypeId + ", employeeUsername='" + employeeUsername + '\'' + ", managerUsername='" + managerUsername + '\'' + '}';
     }
 }

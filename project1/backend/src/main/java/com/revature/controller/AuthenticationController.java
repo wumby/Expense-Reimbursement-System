@@ -17,16 +17,14 @@ public class AuthenticationController implements Controller {
 
     public AuthenticationController() {
         this.userService = new UserService();
-        this.jwtService = new JWTService();
+        this.jwtService = JWTService.getInstance();
     }
 
     private Handler login = (ctx) -> {
         System.out.println("Login endpoint invoked");
-
         LoginDTO loginInfo = ctx.bodyAsClass(LoginDTO.class);
 
         User user = userService.login(loginInfo.getUsername(), loginInfo.getPassword());
-        // If FailedLoginException did not occur, then we will move on to the subsequent lines of code
 
         String jwt = this.jwtService.createJWT(user);
 
@@ -37,6 +35,7 @@ public class AuthenticationController implements Controller {
 
     @Override
     public void mapEndpoints(Javalin app) {
+
         app.post("/login", login);
     }
 }

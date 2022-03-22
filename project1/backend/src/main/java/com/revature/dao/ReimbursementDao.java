@@ -1,6 +1,5 @@
 package com.revature.dao;
 
-import com.revature.dto.AddAssignmentDTO;
 import com.revature.model.Reimbursement;
 import com.revature.model.User;
 import com.revature.utility.ConnectionUtility;
@@ -9,142 +8,60 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssignmentDao {
+public class ReimbursementDao {
 
-    public Reimbursement gradeAssignment(int assignmentId, int grade, int graderId) throws SQLException {
-        try (Connection con = ConnectionUtility.getConnection()) {
-            con.setAutoCommit(false);
-
-            String sql = "UPDATE assignments " +
-                    "SET grade = ?, " +
-                    "grader_id = ? " +
-                    "WHERE id = ?";
-
-            PreparedStatement pstmt = con.prepareStatement(sql);
-            pstmt.setInt(1, grade);
-            pstmt.setInt(2, graderId);
-            pstmt.setInt(3, assignmentId);
-
-            pstmt.executeUpdate();
-
-            String sql2 = "SELECT a.id as assignment_id, a.assignment_name, a.grade, student_user.id as student_id, student_user.username as student_username, student_user.password as student_password, grader_user.id as grader_id, grader_user.username as grader_username, grader_user.password as grader_password " +
-                    "FROM assignments a " +
-                    "LEFT JOIN users student_user " +
-                    "ON student_user.id = a.student_id " +
-                    "LEFT JOIN users grader_user " +
-                    "ON grader_user.id = a.grader_id " +
-                    "WHERE a.id = ?";
-
-            PreparedStatement pstmt2 = con.prepareStatement(sql2);
-            pstmt2.setInt(1, assignmentId);
-
-            ResultSet rs2 = pstmt2.executeQuery();
-
-            rs2.next();
-            // Assignments
-            int aId = rs2.getInt("assignment_id");
-            String assignmentName = rs2.getString("assignment_name");
-            int gr = rs2.getInt("grade");
-
-            // Student User
-            int studentId = rs2.getInt("student_id");
-            String studentUsername = rs2.getString("student_username");
-            String studentPassword = rs2.getString("student_password");
-            String studentRole = "student";
-
-            User student = new User(studentId, studentUsername, studentPassword, studentRole);
-
-            // Trainer User
-            int gId = rs2.getInt("grader_id");
-            String graderUsername = rs2.getString("grader_username");
-            String graderPassword = rs2.getString("grader_password");
-            String graderRole = "trainer";
-
-            User trainer = new User(gId, graderUsername, graderPassword, graderRole);
-
-            Reimbursement a = new Reimbursement(aId, assignmentName, gr, student, trainer);
-
-            con.commit();
-            return a;
-        }
-    }
-
-    public Reimbursement addAssignment(int studentId, AddAssignmentDTO dto) throws SQLException {
-        try (Connection con = ConnectionUtility.getConnection()) {
-            con.setAutoCommit(false); // We could set autocommit to false, and at the end, commit the changes
-
-            String sql = "INSERT INTO assignments (assignment_name, student_id) " +
-                    "VALUES (?, ?)";
-
-            PreparedStatement pstmt1 = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
-            pstmt1.setString(1, dto.getAssignmentName());
-            pstmt1.setInt(2, studentId);
-            pstmt1.executeUpdate();
-
-            ResultSet rs = pstmt1.getGeneratedKeys();
-            rs.next();
-            int assignmentId = rs.getInt(1); // Our automatically generated id
-
-            String sql2 = "SELECT * FROM users WHERE id = ?";
-            PreparedStatement pstmt2 = con.prepareStatement(sql2);
-            pstmt2.setInt(1, studentId);
-
-            ResultSet rs2 = pstmt2.executeQuery();
-            rs2.next();
-            int sId = rs2.getInt("id");
-            String studentUsername = rs2.getString("username");
-            String studentPassword = rs2.getString("password");
-            String studentRole = "student";
-
-            User student = new User(sId, studentUsername, studentPassword, studentRole);
-
-            Reimbursement reimbursement = new Reimbursement(assignmentId, dto.getAssignmentName(), 0, student, null);
-
-            con.commit(); // commit the transaction
-
-            return reimbursement;
-        }
-    }
-
-    public List<Reimbursement> getAllAssignments() throws SQLException {
+    public List<Reimbursement> getAllReimbursements() throws SQLException {
         try (Connection con = ConnectionUtility.getConnection()) {
             List<Reimbursement> reimbursements = new ArrayList<>();
 
-            String sql = "SELECT assignments.id as assignment_id, assignment_name, grade, student_user.id as student_id, student_user.username as student_username, student_user.password as student_password, grader_user.id as grader_id, grader_user.username as grader_username, grader_user.password as grader_password " +
-                    "FROM assignments " +
-                    "LEFT JOIN users student_user " +
-                    "ON student_user.id = assignments.student_id " +
-                    "LEFT JOIN users grader_user " +
-                    "ON grader_user.id = assignments.grader_id";
+            String sql = "SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,rs.reimb_status_id,r.reimb_type_id " + ",e.USERS_ID as employee_id," +
+                    " e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email," +
+                    "m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email " +
+                    "FROM reimbursements r " +
+                    "left join users e " + "on e.USERS_ID = r.reimb_author " +
+                    "left join users m " + "on m.USERS_ID = r.reimb_resolver ";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
 
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                // Assignments
-                int assignmentId = rs.getInt("assignment_id");
-                String assignmentName = rs.getString("assignment_name");
-                int grade = rs.getInt("grade");
+                // Reimbursements
+                int reimbursementId = rs.getInt("reimb_id");
+                int reimbursementAmount = rs.getInt("reimb_amount");
+                String reimbursementSubmitted = rs.getString("reimb_submitted");
+                //String reimbursementResolved = rs.getString("reimb_resolved");
+                String reimbursementDescription = rs.getString("reimb_description");
+                //String reimbursementReceipt = rs.getString("reimb_receipt");
+                int reimbursementAuthor = rs.getInt("reimb_author");
+                //int reimbursementResolver = rs.getInt("reimb_resolver");
+                int reimbursementStatus = rs.getInt("reimb_status_id");
+                int reimbursementType = rs.getInt("reimb_type_id");
 
-                // Student User
-                int studentId = rs.getInt("student_id");
-                String studentUsername = rs.getString("student_username");
-                String studentPassword = rs.getString("student_password");
-                String studentRole = "student";
 
-                User student = new User(studentId, studentUsername, studentPassword, studentRole);
+                // Employee User
+                int employeeId = rs.getInt("employee_id");
+                String employeeUsername = rs.getString("employee_username");
+                String employeePassword = rs.getString("employee_password");
+                String employeeFirstName = rs.getString("employee_firstname");
+                String employeeLastName = rs.getString("employee_lastname");
+                String employeeEmail = rs.getString("employee_email");
+                String employeeUserRole = "employee";
 
-                // Trainer User
-                int graderId = rs.getInt("grader_id");
-                String graderUsername = rs.getString("grader_username");
-                String graderPassword = rs.getString("grader_password");
-                String graderRole = "trainer";
+                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);
 
-                User trainer = new User(graderId, graderUsername, graderPassword, graderRole);
+                // Manager User
+                int managerId = rs.getInt("manager_id");
+                String managerUsername = rs.getString("manager_username");
+                String managerPassword = rs.getString("manager_password");
+                String managerFirstName = rs.getString("manager_firstname");
+                String managerLastName = rs.getString("manager_lastname");
+                String managerEmail = rs.getString("manager_email");
+                String managerUserRole = "manager";
 
-                Reimbursement a = new Reimbursement(assignmentId, assignmentName, grade, student, trainer);
+                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);
+
+                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription, null, reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);
 
                 reimbursements.add(a);
             }
@@ -152,53 +69,6 @@ public class AssignmentDao {
             return reimbursements;
         }
     }
+}
 
-        public List<Reimbursement> getAllAssignmentsByUserId (int userId) throws SQLException {
-            try (Connection con = ConnectionUtility.getConnection()) {
-                List<Reimbursement> reimbursements = new ArrayList<>();
 
-                String sql = "SELECT a.id as assignment_id, assignment_name, grade, student_user.id as student_id, student_user.username as student_username, student_user.password as student_password, grader_user.id as grader_id, grader_user.username as grader_username, grader_user.password as grader_password " +
-                        "FROM assignments a " +
-                        "LEFT JOIN users student_user " +
-                        "ON student_user.id = a.student_id " +
-                        "LEFT JOIN users grader_user " +
-                        "ON grader_user.id = a.grader_id " +
-                        "WHERE a.student_id = ?";
-
-                PreparedStatement pstmt = con.prepareStatement(sql);
-                pstmt.setInt(1, userId);
-
-                ResultSet rs = pstmt.executeQuery();
-
-                while (rs.next()) {
-                    // Assignments
-                    int assignmentId = rs.getInt("assignment_id");
-                    String assignmentName = rs.getString("assignment_name");
-                    int grade = rs.getInt("grade");
-
-                    // Student User
-                    int studentId = rs.getInt("student_id");
-                    String studentUsername = rs.getString("student_username");
-                    String studentPassword = rs.getString("student_password");
-                    String studentRole = "student";
-
-                    User student = new User(studentId, studentUsername, studentPassword, studentRole);
-
-                    // Trainer User
-                    int graderId = rs.getInt("grader_id");
-                    String graderUsername = rs.getString("grader_username");
-                    String graderPassword = rs.getString("grader_password");
-                    String graderRole = "trainer";
-
-                    User trainer = new User(graderId, graderUsername, graderPassword, graderRole);
-
-                    Reimbursement a = new Reimbursement(assignmentId, assignmentName, grade, student, trainer);
-
-                    reimbursements.add(a);
-                }
-
-                return reimbursements;
-            }
-        }
-
-    }

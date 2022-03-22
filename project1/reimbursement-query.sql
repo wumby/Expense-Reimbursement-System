@@ -46,12 +46,13 @@ CREATE TABLE reimbursement_type (
 CREATE TABLE reimbursements (
 	REIMB_ID SERIAL PRIMARY KEY,
 	REIMB_AMOUNT INTEGER NOT NULL,
-	REIMB_SUBMITTED TIMESTAMPTZ NOT NULL,
+	REIMB_SUBMITTED VARCHAR(250) NOT NULL,
+	REIMB_RESOLVED VARCHAR(250) ,
 	REIMB_DESCRIPTION VARCHAR(250),
-	REIMB_RECEIPT text NOT NULL,
+	REIMB_RECEIPT text,
 	REIMB_AUTHOR INTEGER NOT NULL,
-	REIMB_RESOLVER INTEGER NOT NULL,
-	REIMB_STATUS_ID INTEGER default 202,
+	REIMB_RESOLVER INTEGER,
+	REIMB_STATUS_ID INTEGER default 2,
 	REIMB_TYPE_ID INTEGER NOT NULL,
 	
 	CONSTRAINT fk_REIMB_AUTHOR foreign key(REIMB_AUTHOR) references users(USERS_ID) on delete CASCADE,
@@ -65,39 +66,45 @@ CREATE TABLE reimbursements (
 
 insert into reimbursement_status (REIMB_STATUS_ID, REIMB_STATUS)
 values
-(101, 'Approved'),
-(202, 'Pending'),
-(303, 'Rejected');
+(1, 'Approved'),
+(2, 'Pending'),
+(3, 'Rejected');
 
 insert into reimbursement_type (REIMB_TYPE_ID, REIMB_TYPE)
 values
-(10, 'Lodging'),
-(20, 'Travel'),
-(30, 'Food'),
-(40, 'Other');
+(1, 'Lodging'),
+(2, 'Travel'),
+(3, 'Food'),
+(4, 'Other');
 
 insert into user_roles (user_role_id, user_role)
 values
-(100, 'Management'),
-(200, 'Finance'),
-(300, 'HR'),
-(400, 'IT'),
-(500, 'Marketing'),
-(600, 'Sales'),
-(700, 'Quality Assurance');
+(1, 'Employee'),
+(2, 'Manager');
 
 INSERT INTO users (username, user_password, first_name, last_name, user_email, user_role_id)
 values
-('CatMom1', 'ilovemycats!', 'Angela', 'Martin', 'angela_martin1@dundermifflen.net', 200),
+('wumby', 'password', 'Jack', 'Ziegler', 'jack@gmail.com', 1),
+('bach_tran', 'password', 'Bach', 'Tran','bach@gmail.com', 2);
 
 
 
 
-insert into reimbursements  (REIMB_AMOUNT, REIMB_SUBMITTED, REIMB_DESCRIPTION, REIMB_RECEIPT, REIMB_AUTHOR, REIMB_RESOLVER, REIMB_TYPE_ID)
+insert into reimbursements  (REIMB_AMOUNT, REIMB_SUBMITTED, REIMB_DESCRIPTION, REIMB_AUTHOR,REIMB_STATUS_ID, REIMB_TYPE_ID)
 VALUES
-(250, '2022-03-18 13:49:51.873 -0600', 'Airfare for Company Conference','https://storage.googleapis.com/reimb-receipt-images/sample_receipt_1.png',7, 8 , 20);
+(250, '01-01-2022 5:30', 'bus ticket',1,2, 2),
+(2530, '01-01-2022 5:30', 'burger',1,2, 3),
+(2540, '01-01-2022 5:30', 'strip club',1,2, 4);
+
+
+SELECT u.users_id, u.username, u.user_password, u.first_name,u.last_name, u.user_email, ur.user_role
+FROM users u 
+INNER JOIN user_roles ur 
+ON u.user_role_id = ur.user_role_id 
+WHERE u.username = 'wumby' AND u.user_password = 'password';
+
+
+SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id ,e.USERS_ID as employee_id, e.username,e.user_password,e.first_name,e.last_name,e.user_email,m.USERS_ID, m.username,m.user_password,m.first_name,m.last_name,m.user_email FROM reimbursements r left join users e on e.USERS_ID = r.reimb_author left join users m on m.USERS_ID = r.reimb_resolver 
 
 
 
-SELECT *
-FROM reimbursements 
