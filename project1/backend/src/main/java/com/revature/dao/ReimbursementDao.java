@@ -1,7 +1,7 @@
 package com.revature.dao;
 
 import com.revature.dto.AddAssignmentDTO;
-import com.revature.model.Assignment;
+import com.revature.model.Reimbursement;
 import com.revature.model.User;
 import com.revature.utility.ConnectionUtility;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AssignmentDao {
 
-    public Assignment gradeAssignment(int assignmentId, int grade, int graderId) throws SQLException {
+    public Reimbursement gradeAssignment(int assignmentId, int grade, int graderId) throws SQLException {
         try (Connection con = ConnectionUtility.getConnection()) {
             con.setAutoCommit(false);
 
@@ -62,14 +62,14 @@ public class AssignmentDao {
 
             User trainer = new User(gId, graderUsername, graderPassword, graderRole);
 
-            Assignment a = new Assignment(aId, assignmentName, gr, student, trainer);
+            Reimbursement a = new Reimbursement(aId, assignmentName, gr, student, trainer);
 
             con.commit();
             return a;
         }
     }
 
-    public Assignment addAssignment(int studentId, AddAssignmentDTO dto) throws SQLException {
+    public Reimbursement addAssignment(int studentId, AddAssignmentDTO dto) throws SQLException {
         try (Connection con = ConnectionUtility.getConnection()) {
             con.setAutoCommit(false); // We could set autocommit to false, and at the end, commit the changes
 
@@ -99,17 +99,17 @@ public class AssignmentDao {
 
             User student = new User(sId, studentUsername, studentPassword, studentRole);
 
-            Assignment assignment = new Assignment(assignmentId, dto.getAssignmentName(), 0, student, null);
+            Reimbursement reimbursement = new Reimbursement(assignmentId, dto.getAssignmentName(), 0, student, null);
 
             con.commit(); // commit the transaction
 
-            return assignment;
+            return reimbursement;
         }
     }
 
-    public List<Assignment> getAllAssignments() throws SQLException {
+    public List<Reimbursement> getAllAssignments() throws SQLException {
         try (Connection con = ConnectionUtility.getConnection()) {
-            List<Assignment> assignments = new ArrayList<>();
+            List<Reimbursement> reimbursements = new ArrayList<>();
 
             String sql = "SELECT assignments.id as assignment_id, assignment_name, grade, student_user.id as student_id, student_user.username as student_username, student_user.password as student_password, grader_user.id as grader_id, grader_user.username as grader_username, grader_user.password as grader_password " +
                     "FROM assignments " +
@@ -144,18 +144,18 @@ public class AssignmentDao {
 
                 User trainer = new User(graderId, graderUsername, graderPassword, graderRole);
 
-                Assignment a = new Assignment(assignmentId, assignmentName, grade, student, trainer);
+                Reimbursement a = new Reimbursement(assignmentId, assignmentName, grade, student, trainer);
 
-                assignments.add(a);
+                reimbursements.add(a);
             }
 
-            return assignments;
+            return reimbursements;
         }
     }
 
-        public List<Assignment> getAllAssignmentsByUserId (int userId) throws SQLException {
+        public List<Reimbursement> getAllAssignmentsByUserId (int userId) throws SQLException {
             try (Connection con = ConnectionUtility.getConnection()) {
-                List<Assignment> assignments = new ArrayList<>();
+                List<Reimbursement> reimbursements = new ArrayList<>();
 
                 String sql = "SELECT a.id as assignment_id, assignment_name, grade, student_user.id as student_id, student_user.username as student_username, student_user.password as student_password, grader_user.id as grader_id, grader_user.username as grader_username, grader_user.password as grader_password " +
                         "FROM assignments a " +
@@ -192,12 +192,12 @@ public class AssignmentDao {
 
                     User trainer = new User(graderId, graderUsername, graderPassword, graderRole);
 
-                    Assignment a = new Assignment(assignmentId, assignmentName, grade, student, trainer);
+                    Reimbursement a = new Reimbursement(assignmentId, assignmentName, grade, student, trainer);
 
-                    assignments.add(a);
+                    reimbursements.add(a);
                 }
 
-                return assignments;
+                return reimbursements;
             }
         }
 
