@@ -104,7 +104,10 @@ ON u.user_role_id = ur.user_role_id
 WHERE u.username = 'wumby' AND u.user_password = 'password';
 
 
-SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id ,e.USERS_ID as employee_id, e.username,e.user_password,e.first_name,e.last_name,e.user_email,m.USERS_ID, m.username,m.user_password,m.first_name,m.last_name,m.user_email FROM reimbursements r left join users e on e.USERS_ID = r.reimb_author left join users m on m.USERS_ID = r.reimb_resolver 
+SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,rs.reimb_status ,rt.reimb_type ,e.USERS_ID as employee_id, e.username,e.user_password,e.first_name,e.last_name,e.user_email,m.USERS_ID, m.username,m.user_password,m.first_name,m.last_name,m.user_email FROM reimbursements r left join users e on e.USERS_ID = r.reimb_author left join users m on m.USERS_ID = r.reimb_resolver 
+left join reimbursement_status rs on rs.reimb_status_id = r.reimb_status_id
+left join reimbursement_type rt on rt.reimb_type_id = r.reimb_type_id 
+
 
 
 

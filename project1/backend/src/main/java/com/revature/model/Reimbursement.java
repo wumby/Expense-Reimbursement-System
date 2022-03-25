@@ -9,7 +9,6 @@ public class Reimbursement {
     private String reimbSubmitted;
     private String reimbResolved;
     private String reimbDescription;
-    private String reimbReceipt;
     private int reimbAuthor;
     private int reimbResolver;
     private int reimbStatusId;
@@ -22,13 +21,12 @@ public class Reimbursement {
     public Reimbursement() {
     }
 
-    public Reimbursement(int id, int reimbAmount, String reimbSubmitted, String reimbResolved, String reimbDescription, String reimbReceipt, int reimbAuthor, int reimbResolver, int reimbStatusId, int reimbTypeId, User employee, User manager) {
+    public Reimbursement(int id, int reimbAmount, String reimbSubmitted, String reimbResolved, String reimbDescription, int reimbAuthor, int reimbResolver, int reimbStatusId, int reimbTypeId, User employee, User manager) {
         this.id = id;
         this.reimbAmount = reimbAmount;
         this.reimbSubmitted = reimbSubmitted;
         this.reimbResolved = reimbResolved;
         this.reimbDescription = reimbDescription;
-        this.reimbReceipt = reimbReceipt;
         this.reimbAuthor = reimbAuthor;
         this.reimbResolver = reimbResolver;
         this.reimbStatusId = reimbStatusId;
@@ -77,13 +75,6 @@ public class Reimbursement {
         this.reimbDescription = reimbDescription;
     }
 
-    public String getReimbReceipt() {
-        return reimbReceipt;
-    }
-
-    public void setReimbReceipt(String reimbReceipt) {
-        this.reimbReceipt = reimbReceipt;
-    }
 
     public int getReimbAuthor() {
         return reimbAuthor;
@@ -138,18 +129,18 @@ public class Reimbursement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Reimbursement that = (Reimbursement) o;
-        return id == that.id && reimbAmount == that.reimbAmount && reimbAuthor == that.reimbAuthor && reimbResolver == that.reimbResolver && reimbStatusId == that.reimbStatusId && reimbTypeId == that.reimbTypeId && reimbSubmitted.equals(that.reimbSubmitted) && reimbResolved.equals(that.reimbResolved) && reimbDescription.equals(that.reimbDescription) && reimbReceipt.equals(that.reimbReceipt) && employee.equals(that.employee) && manager.equals(that.manager);
+        return id == that.id && reimbAmount == that.reimbAmount && reimbAuthor == that.reimbAuthor && reimbResolver == that.reimbResolver && reimbStatusId == that.reimbStatusId && reimbTypeId == that.reimbTypeId && reimbSubmitted.equals(that.reimbSubmitted) && reimbResolved.equals(that.reimbResolved) && reimbDescription.equals(that.reimbDescription) && employee.equals(that.employee) && manager.equals(that.manager);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, reimbAmount, reimbSubmitted, reimbResolved, reimbDescription, reimbReceipt,
+        return Objects.hash(id, reimbAmount, reimbSubmitted, reimbResolved, reimbDescription,
                 reimbAuthor, reimbResolver, reimbStatusId, reimbTypeId, employee, manager);
     }
 
 
     @Override
     public String toString() {
-        return "Reimbursement{" + "id=" + id + ", reimbAmount=" + reimbAmount + ", reimbSubmitted='" + reimbSubmitted + '\'' + ", reimbResolved='" + reimbResolved + '\'' + ", reimbDescription='" + reimbDescription + '\'' + ", reimbReceipt='" + reimbReceipt + '\'' + ", reimbAuthor=" + reimbAuthor + ", reimbResolver=" + reimbResolver + ", reimbStatusId=" + reimbStatusId + ", reimbTypeId=" + reimbTypeId + ", employee=" + employee + ", financeManager=" + manager + '}';
+        return "Reimbursement{" + "id=" + id + ", reimbAmount=" + reimbAmount + ", reimbSubmitted='" + reimbSubmitted + '\'' + ", reimbResolved='" + reimbResolved + '\'' + ", reimbDescription='" + reimbDescription + '\'' + ", reimbAuthor=" + reimbAuthor + ", reimbResolver=" + reimbResolver + ", reimbStatusId=" + reimbStatusId + ", reimbTypeId=" + reimbTypeId + ", employee=" + employee + ", financeManager=" + manager + '}';
     }
 }

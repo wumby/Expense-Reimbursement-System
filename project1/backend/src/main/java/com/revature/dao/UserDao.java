@@ -17,7 +17,7 @@ public class UserDao {
         try (Connection con = ConnectionUtility.getConnection()) { // Automatically closes the Connection object
             String sql = "SELECT users.users_id, users.username, users.user_password, users.first_name,users.last_name, users.user_email, user_roles.user_role " +
             "FROM users " +
-            "INNER JOIN user_roles  " +
+            "INNER JOIN user_roles " +
             "ON users.user_role_id = user_roles.user_role_id " +
             "WHERE users.username = ? AND users.user_password = ? ";
 

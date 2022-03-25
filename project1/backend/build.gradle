@@ -5,6 +5,8 @@ plugins {
 group 'com.revature'
 version '1.0-SNAPSHOT'
 
+
+
 repositories {
     mavenCentral()
 }
@@ -36,6 +38,7 @@ dependencies {
     implementation 'org.apache.tika:tika-core:2.3.0'
     implementation 'ch.qos.logback:logback-classic:1.2.10'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+
 }
 
 test {

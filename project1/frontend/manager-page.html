@@ -4,20 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
     <title>Manager Page</title>
 </head>
 <body>
-    <h1 style = "text-align: center;">Welcome to the Manager page</h1>
+    
+    
 
 
-    <table id="reimbursements-tbl" style = "margin-left:auto; margin-right:auto;">
+    <table id="reimbursements-tbl" cellspacing ="20">
         <thead></thead>
         <tbody>
 
         </tbody>
     </table>
-    <button id="loadReimb-btn">See Reimbursements</button>
-    <button id="logout-btn">logout</button>
+</head>
+  
+<body>
+    <div class="main">
+        <div class = "heading1">
+            <h1>Manager Page</h1>
+        </div>
+        <div class="dropdown_list">
+            <button class="dropdown_button"  
+                onclick="show_list()">
+                See Reimbursements
+            </button>
+  
+            <div id="courses_id" class="courses">
+                <li  onclick="populateReimbursementsTable()">All Reimbursements</a></li>
+                <li  onclick="populateDeniedReimbursementsTable()">Denied Reimbursements</a></li>
+                <li onclick="populateApprovedReimbursementsTable()">Approved Reimbursements</a></li>
+                <li onclick="populatePendingReimbursementsTable()">Pending Reimbursements</a></li>
+            </div>
+        </div>
+    </div>
+    <button id="judgeReimb-btn">Approve/Deny Reimbursements</button>
+    <button id="logout-btn">Logout</button>
 
     <script src="manager-page.js"></script>
 </body>
