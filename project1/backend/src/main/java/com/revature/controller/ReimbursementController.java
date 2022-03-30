@@ -88,6 +88,42 @@ public class ReimbursementController implements Controller {
         ctx.json(dtos);
     };
 
+    private Handler getPendingReimbursementsByEmployee = (ctx) -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = this.jwtService.parseJwt(jwt);
+
+        if (!token.getBody().get("user_role").equals("Employee")) {
+            throw new UnauthorizedResponse("You must be an employee to access this endpoint");
+        }
+
+        String userId = ctx.pathParam("employeeId");
+        int id = Integer.parseInt(userId);
+        if (!token.getBody().get("user_id").equals(id)) {
+            throw new UnauthorizedResponse("You cannot obtain reimbursements that don't belong to yourself");
+        }
+
+        List<ResponseReimbursementDTO> dtos = this.reimbursementService.getPendingReimbursementsByEmployee(id);
+        ctx.json(dtos);
+    };
+
+    private Handler getResolvedReimbursementsByEmployee = (ctx) -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = this.jwtService.parseJwt(jwt);
+
+        if (!token.getBody().get("user_role").equals("Employee")) {
+            throw new UnauthorizedResponse("You must be an employee to access this endpoint");
+        }
+
+        String userId = ctx.pathParam("employeeId");
+        int id = Integer.parseInt(userId);
+        if (!token.getBody().get("user_id").equals(id)) {
+            throw new UnauthorizedResponse("You cannot obtain reimbursements that don't belong to yourself");
+        }
+
+        List<ResponseReimbursementDTO> dtos = this.reimbursementService.getResolvedReimbursementsByEmployee(id);
+        ctx.json(dtos);
+    };
+
 
     private Handler addReimbursement = (ctx) -> {
         String jwt = ctx.header("Authorization").split(" ")[1];
@@ -104,13 +140,13 @@ public class ReimbursementController implements Controller {
             throw new UnauthorizedResponse("You cannot add a reimbursement for an employee other than yourself");
         }
 
-        String ra = ctx.queryParam("amount");
+        String ra = ctx.formParam("amount");
         int reimbursementAmount = Integer.parseInt(ra);
-        String reimbursementSubmitted = ctx.queryParam("submitted");
-        String reimbursementDescription = ctx.queryParam("description");
+        String reimbursementSubmitted = ctx.formParam("submitted");
+        String reimbursementDescription = ctx.formParam("description");
         UploadedFile file = ctx.uploadedFile("receipt");
         InputStream is = file.getContent();
-        String ti = ctx.queryParam("typeId");
+        String ti = ctx.formParam("type");
         int reimbursementTypeId = Integer.parseInt(ti);
         AddReimbursementDTO dto = new AddReimbursementDTO();
         dto.setReimbAmount(reimbursementAmount);
@@ -148,10 +184,9 @@ public class ReimbursementController implements Controller {
     };
 
     private Handler getReimbursementImage = (ctx) -> {
-        String userId = ctx.pathParam("user_id");
 
-        String reimbursementId = ctx.pathParam("reimbursement_id");
-        InputStream image = this.reimbursementService.getReimbursementImage(reimbursementId, userId);
+        String reimbursementId = ctx.pathParam("reimbursementId");
+        InputStream image = this.reimbursementService.getReimbursementImage(reimbursementId);
 
         Tika tika = new Tika();
         String mimeType = tika.detect(image);
@@ -169,9 +204,11 @@ public class ReimbursementController implements Controller {
         app.get("/reimbursements/denied", getAllDeniedReimbursements);
         app.get("/reimbursements/pending", getAllPendingReimbursements);
         app.get("/users/{employeeId}/reimbursements", getReimbursementsByEmployee);
+        app.get("/users/{employeeId}/reimbursements/pending", getPendingReimbursementsByEmployee);
+        app.get("/users/{employeeId}/reimbursements/resolved", getResolvedReimbursementsByEmployee);
         app.post("/users/{employeeId}/reimbursements", addReimbursement);
         app.patch("/reimbursements/{reimbursementId}", judgeReimbursement);
-        app.get("/users/{user_id}/reimbursements/{reimbursementId}/image", getReimbursementImage);
+        app.get("/reimbursements/{reimbursementId}/image", getReimbursementImage);
         //
     }
 }

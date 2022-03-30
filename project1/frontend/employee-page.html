@@ -4,19 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
     <title>Employee Page</title>
 </head>
 <body>
-    <h1>Welcome to the Employee page</h1>
+    
+    <div class = "empPageTopBar"> 
+        <h1></h1>
+        <h1>Employee Page</h1>
+        <button id="newlogout-btn">Logout</button> 
+    </div>
+    <div class = "empPageLeftBar"> 
+        <div class = "buttons">
+            <button class="viewTicketsBtn" onclick="show_list()">View Your Reimbursements</button>
+            <div id="courses_id" class="courses">
+                <li  onclick="populateReimbursementsTable()">All Reimbursements</a></li>
+                <li  onclick="populatePendingReimbursementsTable()">Pending Reimbursements</a></li>
+                <li onclick="populateResolvedReimbursementsTable()">Resolved Reimbursements</a></li>
+            </div>
+            <button class="addTicketBtn" onclick = "addReimbursement()">Add Reimbursement</button>
+        </div>
+        <div id="addReimbursement-form" style.display: none>
+            
+            <div class = "form">
+            <div class = "Amount">
+                <label for="amount">Amount:</label>
+                <input id="amount" type="number" />
+            </div>
+            <div class = "Submitted">
+                <label for="submitted">Date:</label>
+                <input id="submitted" type="date" />
+            </div>
+            <div class = "Description">
+                <label for="description">Description:</label>
+                <input id="description" type="text" />
+            </div>
+            <div class = "Receipt">
+                <label for="receipt">Image of Receipt:</label>
+                <input type="file" id="receipt" />
+            </div>
+            <div class = "Type">
+                <label for="type">Type:</label>
+                <select name ="type" id = "type">
+                    <option value="1">Lodging</option>
+                    <option value="2">Travel</option>
+                    <option value="3">Food</option>
+                    <option value="4">Other</option>
+                    </select>
+            </div>
+            <button id = "submitBtn">Submit</button>
+        </div>
+        
+        
+        </div>
+        
+    </div>
+ 
+    
+            
+            
+            
 
-    <table id="reimbursements-tbl" style = "margin-left:auto; margin-right:auto;">
+
+    </div>
+        
+    
+    
+
+
+    <table id="reimbursements-tbl" cellspacing ="23">
         <thead></thead>
         <tbody>
 
         </tbody>
     </table>
-    <button id="loadReimb-btn">See Your Reimbursements</button>
-    <button id="logout-btn">logout</button>
+    
+
+    
 
     <script src="employee-page.js"></script>
 </body>

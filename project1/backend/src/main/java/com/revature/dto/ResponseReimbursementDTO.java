@@ -120,7 +120,7 @@ public class ResponseReimbursementDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ResponseReimbursementDTO that = (ResponseReimbursementDTO) o;
-        return id == that.id && reimbAmount == that.reimbAmount && reimbAuthor == that.reimbAuthor && reimbStatusId == that.reimbStatusId && reimbTypeId == that.reimbTypeId && reimbSubmitted.equals(that.reimbSubmitted) && reimbResolved.equals(that.reimbResolved) && reimbDescription.equals(that.reimbDescription) && employeeUsername.equals(that.employeeUsername) && managerUsername.equals(that.managerUsername);
+        return id == that.id && reimbAmount == that.reimbAmount && reimbAuthor == that.reimbAuthor && reimbStatusId == that.reimbStatusId && reimbTypeId == that.reimbTypeId && reimbSubmitted.equals(that.reimbSubmitted) && reimbResolved == (that.reimbResolved) && reimbDescription.equals(that.reimbDescription) && employeeUsername.equals(that.employeeUsername) && managerUsername == (that.managerUsername);
     }
 
     @Override

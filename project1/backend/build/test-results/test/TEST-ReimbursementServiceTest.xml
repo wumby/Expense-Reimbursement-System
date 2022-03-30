@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ReimbursementServiceTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-03-30T19:37:10" hostname="DESKTOP-698R2IH" time="1.268">
+  <properties/>
+  <testcase name="testGetAllReimbursements()" classname="ReimbursementServiceTest" time="0.9"/>
+  <testcase name="testGetAllPendingReimbursements()" classname="ReimbursementServiceTest" time="0.006"/>
+  <testcase name="testGetImage()" classname="ReimbursementServiceTest" time="0.015"/>
+  <testcase name="testGetPendingReimbursementsByEmployee()" classname="ReimbursementServiceTest" time="0.003"/>
+  <testcase name="testGetResolvedReimbursementsByEmployee()" classname="ReimbursementServiceTest" time="0.003"/>
+  <testcase name="testGetAllDeniedReimbursements()" classname="ReimbursementServiceTest" time="0.002"/>
+  <testcase name="testaddReimbursement()" classname="ReimbursementServiceTest" time="0.324"/>
+  <testcase name="testJudgeReimbursement()" classname="ReimbursementServiceTest" time="0.002"/>
+  <testcase name="testGetReimbursementsByEmployee()" classname="ReimbursementServiceTest" time="0.002"/>
+  <testcase name="testGetAllApprovedReimbursements()" classname="ReimbursementServiceTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

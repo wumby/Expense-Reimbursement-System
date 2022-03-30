@@ -1,178 +1,81 @@
-#login {
-    text-align: center;
-    position: fixed;
-    left: 50px;
-    top: 10px;
-
-}
-
-
-#reimbursements-tbl{
-    position: fixed;
-    margin:0;
-    text-align: center;
-    right: 20%;
-    left: 20%;
-    top:13%;
-    bottom: 13%;
-    border: 2px #fccc00;
-    background-color: #f1f1f1;
-
-    
-
-}
-td,tr{
-    font-size: 16px;
-
-}
-
-.gus-quote{
-    background-color: rgb(86, 171, 197);
-    padding: 15px;
-    position: fixed;
-    margin:0;
-    text-align: center;
-    bottom: 25%;
-    left: 35%;
-    color: red;
-    font-family: lucida handwriting,cursive;
-    font-size: 30px;
-    
-
-}
-
-.lph-image{
-    position: fixed;
-    margin:0;
-    text-align: center;
-    top: 3%;
-
-}
-
-.gus-image{
-    position: fixed;
-    margin:0;
-    text-align: center;
-    bottom: 5%;
-    left: 20%;
-
-}
-
-.heading1{
-    position: fixed;
-    margin:0;
-    text-align: center;
-    top: 10px;
-    left:43%;
-
-
-
-
-}
-
-body {
+*{
     margin: 0;
     padding: 0;
+}
+body {
     background: #fccc00;
+}
+
+/* Main page*/
+/* Manager Page*/
+.manPageTopBar {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.main {
-    height: 400px;
-    padding: 10px;
-}
-
-#logout-btn{
-    position: fixed;
-    margin:0;
-    text-align: center;
-    right: 1%;
-    top:13%;
-    
     background-color: #0979ad;
+    justify-content: space-between;
+    height:100px
+    
+    
+}
+
+.manPageTopBar button {
+    background-color: #fccc00;
     color: black;
     padding: 16px;
     font-size: 18px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    width: 200px;
     font-family: montserrat;
     border: 1px solid black;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#hide-btn{
-    position: fixed;
-    margin:0;
-    text-align: center;
-    
+.manPageTopBar h1 {
+    font-size: 60px;
+
+}
+
+.manPageLeftBar {
+    display: flex;
+    align-items:flex-start;
     background-color: #0979ad;
-    color: black;
-    padding: 16px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    width: 200px;
-    font-family: montserrat;
-    border: 1px solid black;
-    bottom:10%
-    
-
+    width : 200px;
+    height: 1000px;
 }
-
-#judgeReimb-btn
-{
-    max-width:100%;
-    position: fixed;
-    margin:0;
-    text-align: center;
-    left: 1%;
-    top: 25%;
-    
-    background-color: #0979ad;
-    color: black;
-    padding: 16px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    width: 200px;
-    font-family: montserrat;
-    border: 1px solid black;
-}
-
 .dropdown_button {
-    position: fixed;
-    margin:0;
-    text-align: center;
-    left: 1%;
-    top: 13%;
-    
-    background-color: #0979ad;
+    background-color: #fccc00;
     color: black;
     padding: 16px;
     font-size: 18px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    width: 200px;
     font-family: montserrat;
     border: 1px solid black;
+    width : 200px;
+}
+
+.judgeReimb-btn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width : 200px;
+    margin-top: 150px;
 }
 
 .courses {
-    position: fixed;
-    margin:0;
     text-align: center;
     font-weight: bold;
-    left: 1%;
-    top: 13%;
     display: none;
-    position: absolute;
     background-color: #f1f1f1;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(243, 5, 5, 0.2);
@@ -202,7 +105,239 @@ body {
     color: #fccc00;
 }
 
+.mySelect{
+    width:fit-content;
+}
+
+
+/*EMPLOYEE PAGE*/
+
+.empPageTopBar {
+    display: flex;
+    background-color: #0979ad;
+    justify-content: space-between;
+    
+    
+}
+
+.empPageTopBar button {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    margin-right: 30px;
+}
+
+.empPageTopBar h1 {
+    font-size: 60px;
+
+}
+
+.empPageLeftBar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #0979ad;
+    width: 200px;
+    height: 1000px;
+}
+.viewTicketsBtn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width : 200px;
+}
+
+
+.addTicketBtn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: 200px;
+    margin-top: 150px;
+}
+
+
+
+#reimbursements-tbl{
+    position: fixed;
+    margin:0;
+    font-weight:bold;
+    text-align: center;
+    right: 20%;
+    left: 20%;
+    top:13%;
+    bottom: 13%;
+    border: 2px #fccc00;
+    background-color: #0979ad;
+
+    
+
+}
+td,tr{
+    font-size: 16px;
+
+}
+
+.addReimbursement-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    
+}
+
+.form{
+    margin-left: 570px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+input {
+    border:#0979ad;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+
+.Amount{
+    margin-top: 30px;
+    
+}
+.Date{
+    margin-top: 30px;
+}
+.Description{
+    margin-top: 30px;
+}
+.Receipt{
+    margin-top: 30px;
+
+}
+
+
+.Type{
+    margin-top: 30px;
+}
+.Submit-btn{
+    margin-top: 25px;
+    background-color:#0979ad;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: 200px;
+}
+
+
+
+
+/*Main Page
+
+
+
+
+
+*/
+
+.mainTop{
+    background-color: #0979ad;
+    display: flex;
+
+}
+.login{
+    font-weight: bold;
+}
+
+.login h1{
+    margin-top:  10px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+
+}
+.login p{
+    margin-left: 20px;
+    font-size: 23px;
+}
+.login button{
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: fit-content;
+    height: 50px;
+
+}
+
+.logoImage{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
 .form-input {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+
+.mainBottom{
+    display: flex;
+    
+}
+.gusImage{
+    margin-left: 90px;
+    margin-top: 160px;
+
+
+}
+.gus-quote{
+    margin-right: 180px;
+    margin-top: 200px;
+    color: red;
+    font-family: lucida handwriting,cursive;
+    font-size: 30px;
+    
+
 }

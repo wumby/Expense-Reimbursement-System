@@ -25,11 +25,6 @@ public class ReimbursementService {
     }
 
 
-    public ReimbursementService(ReimbursementDao mockDao) {
-        this.reimbursementDao = mockDao;
-    }
-
-
     public List<ResponseReimbursementDTO> getAllPendingReimbursements() throws SQLException {
         List<Reimbursement> reimbursements = this.reimbursementDao.getAllPendingReimbursements();
 
@@ -114,6 +109,38 @@ public class ReimbursementService {
         return reimbursementDTOs;
     }
 
+    public List<ResponseReimbursementDTO> getPendingReimbursementsByEmployee(int id) throws SQLException {
+        List<Reimbursement> reimbursements = this.reimbursementDao.getPendingReimbursementsByEmployee(id);
+
+        List<ResponseReimbursementDTO> reimbursementDTOs = new ArrayList<>();
+
+        for (Reimbursement r : reimbursements) {
+            reimbursementDTOs.add(new ResponseReimbursementDTO(r.getId(), r.getReimbAmount(),r.getReimbSubmitted(),null,
+                    r.getReimbDescription(),r.getReimbAuthor(),r.getReimbStatusId(),r.getReimbTypeId(),
+                    r.getEmployee().getUsername(), r.getManager().getUsername()));
+
+
+        }
+
+        return reimbursementDTOs;
+    }
+
+
+    public List<ResponseReimbursementDTO> getResolvedReimbursementsByEmployee(int id) throws SQLException {
+        List<Reimbursement> reimbursements = this.reimbursementDao.getResolvedReimbursementsByEmployee(id);
+
+        List<ResponseReimbursementDTO> reimbursementDTOs = new ArrayList<>();
+
+        for (Reimbursement r : reimbursements) {
+            reimbursementDTOs.add(new ResponseReimbursementDTO(r.getId(), r.getReimbAmount(),r.getReimbSubmitted(),null,
+                    r.getReimbDescription(),r.getReimbAuthor(),r.getReimbStatusId(),r.getReimbTypeId(),
+                    r.getEmployee().getUsername(), r.getManager().getUsername()));
+
+
+        }
+
+        return reimbursementDTOs;
+    }
 
     public ResponseReimbursementDTO addReimbursement(int id, AddReimbursementDTO dto) throws InvalidImageException, IOException, SQLException {
         Tika tika = new Tika();
@@ -148,12 +175,11 @@ public class ReimbursementService {
     }
 
 
-    public InputStream getReimbursementImage(String reimbursementId, String userId) {
+    public InputStream getReimbursementImage(String reimbursementId) {
         try {
             int aId = Integer.parseInt(reimbursementId);
-            int uId = Integer.parseInt(userId);
 
-            InputStream is = this.reimbursementDao.getReimbursementImage(aId, uId);
+            InputStream is = this.reimbursementDao.getReimbursementImage(aId);
 
             if (is == null) {
                 throw new ImageNotFoundException("Reimbursement id " + reimbursementId + " does not have an image");

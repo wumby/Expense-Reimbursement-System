@@ -8,39 +8,46 @@
     <title>Manager Page</title>
 </head>
 <body>
-    
-    
-
-
-    <table id="reimbursements-tbl" cellspacing ="20">
-        <thead></thead>
-        <tbody>
-
-        </tbody>
-    </table>
-</head>
-  
-<body>
-    <div class="main">
-        <div class = "heading1">
-            <h1>Manager Page</h1>
-        </div>
+    <div class = "manPageTopBar"> 
+        <h1></h1>
+        <h1>Manager Page</h1>
+        <button id="newlogout-btn">Logout</button> 
+    </div>
+    <div class = "manPageLeftBar"> 
         <div class="dropdown_list">
             <button class="dropdown_button"  
                 onclick="show_list()">
                 See Reimbursements
             </button>
-  
+        
             <div id="courses_id" class="courses">
                 <li  onclick="populateReimbursementsTable()">All Reimbursements</a></li>
                 <li  onclick="populateDeniedReimbursementsTable()">Denied Reimbursements</a></li>
                 <li onclick="populateApprovedReimbursementsTable()">Approved Reimbursements</a></li>
                 <li onclick="populatePendingReimbursementsTable()">Pending Reimbursements</a></li>
             </div>
+            <button class="judgeReimb-btn"  onclick="approveReimbursementsTable()">Approve/Deny Reimbursements</button>
+            
         </div>
+            
+
+
     </div>
-    <button id="judgeReimb-btn">Approve/Deny Reimbursements</button>
-    <button id="logout-btn">Logout</button>
+        
+    
+    
+
+
+        <table id="reimbursements-tbl" cellspacing ="23">
+            <thead></thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+    
+  
+
+    
 
     <script src="manager-page.js"></script>
 </body>
