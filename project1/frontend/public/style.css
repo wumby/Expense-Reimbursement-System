@@ -1,0 +1,377 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #fccc00;
+}
+
+/* Main page*/
+/* Manager Page*/
+.manPageTopBar {
+    display: flex;
+    background-color: #0979ad;
+    justify-content: space-between;
+    height:100px
+    
+    
+}
+
+.manPageTopBar button {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.manPageTopBar h1 {
+    font-size: 60px;
+
+}
+
+.manPageLeftBar {
+    display: flex;
+    align-items:flex-start;
+    background-color: #0979ad;
+    width : 200px;
+    height: 1000px;
+}
+.dropdown_button {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width : 200px;
+}
+
+.judgeReimb-btn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width : 200px;
+    margin-top: 150px;
+}
+
+.deleteReimb-btn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width : 200px;
+    margin-top: 150px;
+}
+
+.courses {
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(243, 5, 5, 0.2);
+    z-index: 1;
+}
+
+.courses li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    list-style: none;
+    background-color: #0979ad;
+    font-family: montserrat;
+    border: 1px solid white;
+}
+
+.courses li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+}
+
+.courses li:hover {
+    background-color: #0979ad;
+    color: #fccc00;
+}
+
+.mySelect{
+    width:fit-content;
+}
+
+
+/*EMPLOYEE PAGE*/
+
+.empPageTopBar {
+    display: flex;
+    background-color: #0979ad;
+    justify-content: space-between;
+    
+    
+}
+
+.empPageTopBar button {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    margin-right: 30px;
+}
+
+.empPageTopBar h1 {
+    font-size: 60px;
+
+}
+
+.empPageLeftBar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #0979ad;
+    width: 200px;
+    height: 1000px;
+}
+.viewTicketsBtn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width : 200px;
+}
+
+
+.addTicketBtn {
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: 200px;
+    margin-top: 150px;
+}
+
+
+
+#reimbursements-tbl{
+    position: absolute;
+    height:700px;
+    width: 1300px;
+    margin:0;
+    font-weight:bold;
+    text-align: center;
+    right: 20%;
+    left: 20%;
+    top:13%;
+    bottom: 13%;
+    border: 2px #fccc00;
+    background-color: #0979ad;
+    overflow-y: scroll;
+    display:block;
+
+
+    
+
+}
+td,tr{
+    font-size: 16px;
+
+}
+
+.addReimbursement-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    
+}
+
+.form{
+    margin-left: 570px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+input {
+    border:#0979ad;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+
+.Amount{
+    margin-top: 30px;
+    
+}
+.Date{
+    margin-top: 30px;
+}
+.Description{
+    margin-top: 30px;
+}
+.Receipt{
+    margin-top: 30px;
+
+}
+
+
+.Type{
+    margin-top: 30px;
+}
+.Submit-btn{
+    margin-top: 25px;
+    background-color:#0979ad;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: 200px;
+}
+
+#submit-btn{
+    margin-top: 25px;
+    background-color:#0979ad;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: 200px;
+}
+
+
+
+
+/*Main Page
+
+
+
+
+
+*/
+
+.mainTop{
+    background-color: #0979ad;
+    display: flex;
+
+}
+.login{
+    font-weight: bold;
+}
+
+.login h1{
+    margin-top:  10px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+
+}
+.login p{
+    margin-left: 20px;
+    font-size: 23px;
+}
+.login button{
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    background-color: #fccc00;
+    color: black;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    border: 1px solid black;
+    width: fit-content;
+    height: 50px;
+
+}
+
+.logoImage{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+.form-input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+
+.mainBottom{
+    display: flex;
+    
+}
+.gusImage{
+    margin-left: 90px;
+    margin-top: 160px;
+
+
+}
+.gus-quote{
+    margin-right: 180px;
+    margin-top: 200px;
+    color: red;
+    font-family: lucida handwriting,cursive;
+    font-size: 30px;
+    
+
+}

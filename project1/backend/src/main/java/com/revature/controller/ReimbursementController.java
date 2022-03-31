@@ -197,6 +197,21 @@ public class ReimbursementController implements Controller {
 
     };
 
+
+    private Handler deleteReimbursement =(ctx) -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = this.jwtService.parseJwt(jwt);
+
+        if(!token.getBody().get("user_role").equals("Manager")){
+            throw new UnauthorizedResponse("You must be a manager");
+        }
+        String reimbursementId =ctx.pathParam("reimbursementId");
+        boolean reimbursement = this.reimbursementService.deleteReimbursement(reimbursementId);
+        ctx.json(reimbursement);
+
+
+    };
+
     @Override
     public void mapEndpoints(Javalin app) {
         app.get("/reimbursements", getAllReimbursements);
@@ -208,6 +223,7 @@ public class ReimbursementController implements Controller {
         app.get("/users/{employeeId}/reimbursements/resolved", getResolvedReimbursementsByEmployee);
         app.post("/users/{employeeId}/reimbursements", addReimbursement);
         app.patch("/reimbursements/{reimbursementId}", judgeReimbursement);
+        app.delete("/reimbursements/{reimbursementId}", deleteReimbursement);
         app.get("/reimbursements/{reimbursementId}/image", getReimbursementImage);
         //
     }

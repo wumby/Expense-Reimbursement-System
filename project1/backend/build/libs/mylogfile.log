@@ -1,0 +1,16 @@
+30 03 2022 - 20:55:15.597 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 20:55:15.605 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @650ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 20:55:15.606 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 20:55:15.630 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 20:55:15.749 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 20:55:15.749 [main] INFO  io.javalin.Javalin - Javalin started in 144ms \o/
+30 03 2022 - 20:55:39.431 [JettyServerThreadPool-16] INFO  mylogfile.log - POST request received for /login
+30 03 2022 - 20:56:43.380 [JettyServerThreadPool-13] INFO  mylogfile.log - GET request received for /reimbursements/7/image

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group 'com.revature'
@@ -11,14 +12,29 @@ repositories {
     mavenCentral()
 }
 
+jacoco{
+    toolVersion = "0.8.7"
+    reportsDirectory = file("$buildDir/jacoco")
+
+}
+
+test{
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport{
+    dependsOn test
+}
+
+
+
 jar {
     manifest {
         attributes 'Main-Class': 'com.revature.main.Driver'
     }
 
     from {
-        (configurations.runtimeClasspath).collect {
-            it.isDirectory() ? it : zipTree(it)
+        (configurations.runtimeClasspath).collect {it.isDirectory() ? it : zipTree(it)
         }
     }
 
@@ -27,6 +43,7 @@ jar {
 
 dependencies {
     implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    testImplementation 'org.jacoco:org.jacoco.agent:0.8.7'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.4'
@@ -40,7 +57,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
     testImplementation 'org.mockito:mockito-core:4.4.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:4.4.0'
-
+    testImplementation 'org.jacoco:org.jacoco.agent:0.8.7'
 }
 
 test {

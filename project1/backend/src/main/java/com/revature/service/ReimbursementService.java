@@ -174,6 +174,19 @@ public class ReimbursementService {
         }
     }
 
+    public boolean deleteReimbursement(String reimbursementId) {
+        try{
+            int intReimbursementId = Integer.parseInt(reimbursementId);
+
+            boolean b = this.reimbursementDao.deleteReimbursement(intReimbursementId);
+
+            return b;
+        }
+        catch (NumberFormatException | SQLException e){
+            throw new IllegalArgumentException("You must enter valid int values for the Id's");
+        }
+    }
+
 
     public InputStream getReimbursementImage(String reimbursementId) {
         try {

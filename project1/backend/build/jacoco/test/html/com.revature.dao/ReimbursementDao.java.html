@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReimbursementDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ERS</a> &gt; <a href="index.source.html" class="el_package">com.revature.dao</a> &gt; <span class="el_source">ReimbursementDao.java</span></div><h1>ReimbursementDao.java</h1><pre class="source lang-java linenums">package com.revature.dao;
+
+import com.revature.dto.AddReimbursementDTO;
+import com.revature.model.Reimbursement;
+import com.revature.model.User;
+import com.revature.utility.ConnectionUtility;
+
+import java.io.InputStream;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L13">public class ReimbursementDao {</span>
+
+    public List&lt;Reimbursement&gt; getAllPendingReimbursements() throws SQLException {
+<span class="nc" id="L16">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L17">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L19">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where r.reimb_status_id = 2&quot;;
+
+<span class="nc" id="L27">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+
+<span class="nc" id="L29">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L31" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L33">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L34">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L35">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L37">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L39">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L41">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L42">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L46">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L47">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L48">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L49">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L50">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L51">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L52">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L54">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L57">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L58">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L59">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L60">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L61">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L62">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L63">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L65">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L67">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,  reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);</span>
+
+<span class="nc" id="L69">                reimbursements.add(a);</span>
+<span class="nc" id="L70">            }</span>
+
+<span class="nc" id="L72">            return reimbursements;</span>
+        }
+    }
+
+
+    public List&lt;Reimbursement&gt; getAllApprovedReimbursements() throws SQLException {
+<span class="nc" id="L78">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L79">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L81">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where r.reimb_status_id = 1&quot;;
+
+<span class="nc" id="L89">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+
+<span class="nc" id="L91">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L93" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L95">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L96">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L97">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L99">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L101">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L103">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L104">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L108">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L109">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L110">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L111">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L112">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L113">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L114">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L116">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L119">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L120">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L121">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L122">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L123">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L124">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L125">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L127">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L129">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,  reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);</span>
+
+<span class="nc" id="L131">                reimbursements.add(a);</span>
+<span class="nc" id="L132">            }</span>
+
+<span class="nc" id="L134">            return reimbursements;</span>
+        }
+    }
+
+
+    public List&lt;Reimbursement&gt; getAllDeniedReimbursements() throws SQLException {
+<span class="nc" id="L140">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L141">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L143">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where r.reimb_status_id = 3&quot;;
+
+<span class="nc" id="L151">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+
+<span class="nc" id="L153">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L155" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L157">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L158">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L159">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L161">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L163">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L165">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L166">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L170">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L171">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L172">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L173">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L174">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L175">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L176">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L178">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L181">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L182">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L183">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L184">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L185">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L186">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L187">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L189">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L191">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,  reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);</span>
+
+<span class="nc" id="L193">                reimbursements.add(a);</span>
+<span class="nc" id="L194">            }</span>
+
+<span class="nc" id="L196">            return reimbursements;</span>
+        }
+    }
+
+
+    public List&lt;Reimbursement&gt; getAllReimbursements() throws SQLException {
+<span class="nc" id="L202">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L203">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L205">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot;;
+
+<span class="nc" id="L212">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+
+<span class="nc" id="L214">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L216" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L218">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L219">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L220">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L222">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L224">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L226">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L227">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L231">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L232">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L233">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L234">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L235">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L236">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L237">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L239">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L242">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L243">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L244">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L245">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L246">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L247">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L248">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L250">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L252">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,  reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);</span>
+
+<span class="nc" id="L254">                reimbursements.add(a);</span>
+<span class="nc" id="L255">            }</span>
+
+<span class="nc" id="L257">            return reimbursements;</span>
+        }
+    }
+
+
+    public List&lt;Reimbursement&gt; getReimbursementsByEmployee(int id) throws SQLException{
+<span class="nc" id="L263">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L264">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L266">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where e.USERS_ID = ?&quot;;
+
+<span class="nc" id="L274">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+<span class="nc" id="L275">            pstmt.setInt(1,id);</span>
+
+<span class="nc" id="L277">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L279" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L281">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L282">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L283">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L285">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L287">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L289">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L290">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L294">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L295">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L296">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L297">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L298">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L299">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L300">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L302">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L305">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L306">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L307">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L308">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L309">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L310">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L311">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L313">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L315">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,</span>
+                        reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);
+
+<span class="nc" id="L318">                reimbursements.add(a);</span>
+<span class="nc" id="L319">            }</span>
+
+<span class="nc" id="L321">            return reimbursements;</span>
+        }
+    }
+
+
+
+    public List&lt;Reimbursement&gt; getPendingReimbursementsByEmployee(int id) throws SQLException{
+<span class="nc" id="L328">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L329">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L331">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where e.USERS_ID = ? AND r.reimb_status_id = 2&quot;;
+
+<span class="nc" id="L339">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+<span class="nc" id="L340">            pstmt.setInt(1,id);</span>
+
+<span class="nc" id="L342">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L344" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L346">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L347">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L348">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L350">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L352">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L354">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L355">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L359">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L360">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L361">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L362">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L363">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L364">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L365">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L367">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L370">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L371">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L372">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L373">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L374">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L375">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L376">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L378">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L380">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,</span>
+                        reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);
+
+<span class="nc" id="L383">                reimbursements.add(a);</span>
+<span class="nc" id="L384">            }</span>
+
+<span class="nc" id="L386">            return reimbursements;</span>
+        }
+    }
+
+
+    public List&lt;Reimbursement&gt; getResolvedReimbursementsByEmployee(int id) throws SQLException{
+<span class="nc" id="L392">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L393">            List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L395">            String sql = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where e.USERS_ID = ? AND r.reimb_status_id = 2 OR 3 &quot;;
+
+<span class="nc" id="L403">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+<span class="nc" id="L404">            pstmt.setInt(1,id);</span>
+
+<span class="nc" id="L406">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L408" title="All 2 branches missed.">            while (rs.next()) {</span>
+                // Reimbursements
+<span class="nc" id="L410">                int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L411">                int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L412">                String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+                //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L414">                String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+                //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L416">                int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+                //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L418">                int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L419">                int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+                // Employee User
+<span class="nc" id="L423">                int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L424">                String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L425">                String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L426">                String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L427">                String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L428">                String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L429">                String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L431">                User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+                // Manager User
+<span class="nc" id="L434">                int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L435">                String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L436">                String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L437">                String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L438">                String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L439">                String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L440">                String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L442">                User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L444">                Reimbursement a = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, null, reimbursementDescription,</span>
+                        reimbursementAuthor, 0, reimbursementStatus, reimbursementType, employee, manager);
+
+<span class="nc" id="L447">                reimbursements.add(a);</span>
+<span class="nc" id="L448">            }</span>
+
+<span class="nc" id="L450">            return reimbursements;</span>
+        }
+    }
+
+
+    public Reimbursement addReimbursement(int id, AddReimbursementDTO dto) throws SQLException {
+<span class="nc" id="L456">        try(Connection con = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L457">            con.setAutoCommit(false);</span>
+<span class="nc" id="L458">            String sql = &quot;insert into reimbursements (REIMB_AMOUNT, REIMB_SUBMITTED, REIMB_DESCRIPTION, REIMB_RECEIPT, REIMB_AUTHOR, REIMB_TYPE_ID) &quot; +</span>
+                    &quot;values (?,?,?,?,?,?) &quot;;
+
+<span class="nc" id="L461">            PreparedStatement pstmt1 = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);</span>
+
+<span class="nc" id="L463">            pstmt1.setInt(1, dto.getReimbAmount());</span>
+<span class="nc" id="L464">            pstmt1.setString(2,dto.getReimbSubmitted());</span>
+<span class="nc" id="L465">            pstmt1.setString(3, dto.getReimbDescription());</span>
+<span class="nc" id="L466">            pstmt1.setBinaryStream(4, dto.getReceipt());</span>
+<span class="nc" id="L467">            pstmt1.setInt(5,id);</span>
+<span class="nc" id="L468">            pstmt1.setInt(6,dto.getReimbTypeId());</span>
+<span class="nc" id="L469">            pstmt1.executeUpdate();</span>
+
+<span class="nc" id="L471">            ResultSet rs = pstmt1.getGeneratedKeys();</span>
+<span class="nc" id="L472">            rs.next();</span>
+<span class="nc" id="L473">            int reimbursementId = rs.getInt(1);</span>
+
+<span class="nc" id="L475">            String sql2 = &quot;Select * from users Where users_id = ?&quot;;</span>
+<span class="nc" id="L476">            PreparedStatement pstmt2 = con.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);</span>
+
+<span class="nc" id="L478">            pstmt2.setInt(1, id);</span>
+
+<span class="nc" id="L480">            ResultSet rs2 = pstmt2.executeQuery();</span>
+<span class="nc" id="L481">            rs2.next();</span>
+
+<span class="nc" id="L483">            int employeeId = rs2.getInt(&quot;users_id&quot;);</span>
+<span class="nc" id="L484">            String employeeUsername = rs2.getString(&quot;username&quot;);</span>
+<span class="nc" id="L485">            String employeePassword = rs2.getString(&quot;user_password&quot;);</span>
+<span class="nc" id="L486">            String employeeFirstName = rs2.getString(&quot;first_name&quot;);</span>
+<span class="nc" id="L487">            String employeeLastName = rs2.getString(&quot;last_name&quot;);</span>
+<span class="nc" id="L488">            String employeeEmail = rs2.getString(&quot;user_email&quot;);</span>
+<span class="nc" id="L489">            String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L491">            User employee = new User(employeeId,employeeUsername,employeePassword,employeeFirstName,employeeLastName,employeeEmail,employeeUserRole);</span>
+
+<span class="nc" id="L493">            Reimbursement reimbursement = new Reimbursement(reimbursementId,dto.getReimbAmount(), dto.getReimbSubmitted(), null, dto.getReimbDescription(),</span>
+<span class="nc" id="L494">                    employeeId,0,2,dto.getReimbTypeId(),employee,null);</span>
+
+<span class="nc" id="L496">            con.commit();</span>
+<span class="nc" id="L497">            return reimbursement;</span>
+
+
+
+        }
+    }
+
+
+    public Reimbursement judgeReimbursement(int intReimbursementId, int intReimbursementStatusId, String reimbursementResolved, int user_id) throws SQLException {
+<span class="nc" id="L506">        try(Connection con = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L507">            con.setAutoCommit(false);</span>
+
+<span class="nc" id="L509">            String sql = &quot;update reimbursements &quot; +</span>
+                    &quot;set reimb_resolved = ?, &quot; +
+                    &quot;reimb_resolver = ?, &quot; +
+                    &quot;reimb_status_id = ? &quot; +
+                    &quot;where reimb_id  = ? &quot;;
+<span class="nc" id="L514">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+<span class="nc" id="L515">            pstmt.setString(1,reimbursementResolved);</span>
+<span class="nc" id="L516">            pstmt.setInt(2,user_id);</span>
+<span class="nc" id="L517">            pstmt.setInt(3,intReimbursementStatusId);</span>
+<span class="nc" id="L518">            pstmt.setInt(4,intReimbursementId);</span>
+<span class="nc" id="L519">            pstmt.executeUpdate();</span>
+
+
+<span class="nc" id="L522">            String sql2 = &quot;SELECT r.reimb_id , r.reimb_amount, r.reimb_submitted,r.reimb_description ,r.reimb_author,r.reimb_status_id,r.reimb_type_id &quot; + &quot;,e.USERS_ID as employee_id,&quot; +</span>
+                    &quot; e.username as employee_username,e.user_password as employee_password,e.first_name as employee_firstname,e.last_name as employee_lastname,e.user_email as employee_email,&quot; +
+                    &quot;m.USERS_ID as manager_id, m.username as manager_username,m.user_password as manager_password,m.first_name as manager_firstname,m.last_name as manager_lastname,m.user_email as manager_email &quot; +
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;left join users e &quot; + &quot;on e.USERS_ID = r.reimb_author &quot; +
+                    &quot;left join users m &quot; + &quot;on m.USERS_ID = r.reimb_resolver &quot; +
+                    &quot;where r.reimb_id = ?&quot;;
+
+<span class="nc" id="L530">            PreparedStatement pstmt2 = con.prepareStatement(sql2);</span>
+<span class="nc" id="L531">            pstmt2.setInt(1,intReimbursementId);</span>
+
+<span class="nc" id="L533">            ResultSet rs = pstmt2.executeQuery();</span>
+
+<span class="nc" id="L535">            rs.next();</span>
+            // Reimbursements
+<span class="nc" id="L537">            int reimbursementId = rs.getInt(&quot;reimb_id&quot;);</span>
+<span class="nc" id="L538">            int reimbursementAmount = rs.getInt(&quot;reimb_amount&quot;);</span>
+<span class="nc" id="L539">            String reimbursementSubmitted = rs.getString(&quot;reimb_submitted&quot;);</span>
+            //String reimbursementResolved = rs.getString(&quot;reimb_resolved&quot;);
+<span class="nc" id="L541">            String reimbursementDescription = rs.getString(&quot;reimb_description&quot;);</span>
+            //String reimbursementReceipt = rs.getString(&quot;reimb_receipt&quot;);
+<span class="nc" id="L543">            int reimbursementAuthor = rs.getInt(&quot;reimb_author&quot;);</span>
+            //int reimbursementResolver = rs.getInt(&quot;reimb_resolver&quot;);
+<span class="nc" id="L545">            int reimbursementStatus = rs.getInt(&quot;reimb_status_id&quot;);</span>
+<span class="nc" id="L546">            int reimbursementType = rs.getInt(&quot;reimb_type_id&quot;);</span>
+
+
+            // Employee User
+<span class="nc" id="L550">            int employeeId = rs.getInt(&quot;employee_id&quot;);</span>
+<span class="nc" id="L551">            String employeeUsername = rs.getString(&quot;employee_username&quot;);</span>
+<span class="nc" id="L552">            String employeePassword = rs.getString(&quot;employee_password&quot;);</span>
+<span class="nc" id="L553">            String employeeFirstName = rs.getString(&quot;employee_firstname&quot;);</span>
+<span class="nc" id="L554">            String employeeLastName = rs.getString(&quot;employee_lastname&quot;);</span>
+<span class="nc" id="L555">            String employeeEmail = rs.getString(&quot;employee_email&quot;);</span>
+<span class="nc" id="L556">            String employeeUserRole = &quot;employee&quot;;</span>
+
+<span class="nc" id="L558">            User employee = new User(employeeId, employeeUsername, employeePassword, employeeFirstName, employeeLastName, employeeEmail, employeeUserRole);</span>
+
+            // Manager User
+<span class="nc" id="L561">            int managerId = rs.getInt(&quot;manager_id&quot;);</span>
+<span class="nc" id="L562">            String managerUsername = rs.getString(&quot;manager_username&quot;);</span>
+<span class="nc" id="L563">            String managerPassword = rs.getString(&quot;manager_password&quot;);</span>
+<span class="nc" id="L564">            String managerFirstName = rs.getString(&quot;manager_firstname&quot;);</span>
+<span class="nc" id="L565">            String managerLastName = rs.getString(&quot;manager_lastname&quot;);</span>
+<span class="nc" id="L566">            String managerEmail = rs.getString(&quot;manager_email&quot;);</span>
+<span class="nc" id="L567">            String managerUserRole = &quot;manager&quot;;</span>
+
+<span class="nc" id="L569">            User manager = new User(managerId, managerUsername, managerPassword, managerFirstName, managerLastName, managerEmail, managerUserRole);</span>
+
+<span class="nc" id="L571">            Reimbursement r = new Reimbursement(reimbursementId, reimbursementAmount, reimbursementSubmitted, reimbursementResolved, reimbursementDescription,</span>
+                    reimbursementAuthor, managerId, reimbursementStatus, reimbursementType, employee, manager);
+
+<span class="nc" id="L574">            con.commit();</span>
+<span class="nc" id="L575">            return r;</span>
+            }
+        }
+
+
+    public InputStream getReimbursementImage(int aId) throws SQLException {
+<span class="nc" id="L581">        try (Connection con = ConnectionUtility.getConnection()) {</span>
+<span class="nc" id="L582">            String sql = &quot;SELECT r.reimb_receipt &quot; +</span>
+                    &quot;FROM reimbursements r &quot; +
+                    &quot;WHERE r.reimb_id = ? &quot;;
+
+<span class="nc" id="L586">            PreparedStatement pstmt = con.prepareStatement(sql);</span>
+<span class="nc" id="L587">            pstmt.setInt(1, aId);</span>
+
+<span class="nc" id="L589">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L591" title="All 2 branches missed.">            if (rs.next()) {</span>
+<span class="nc" id="L592">                InputStream is = rs.getBinaryStream(&quot;reimb_receipt&quot;);</span>
+
+<span class="nc" id="L594">                return is;</span>
+            } else {
+<span class="nc" id="L596">                return null;</span>
+            }
+        }
+    }
+
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

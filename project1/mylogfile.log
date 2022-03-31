@@ -12660,3 +12660,112 @@ org.postgresql.util.PSQLException: ERROR: argument of OR must be type boolean, n
 	at java.lang.Thread.run(Thread.java:750)
 30 03 2022 - 11:56:42.464 [JettyServerThreadPool-15] INFO  mylogfile.log - OPTIONS request received for /users/1/reimbursements
 30 03 2022 - 11:56:42.466 [JettyServerThreadPool-17] INFO  mylogfile.log - GET request received for /users/1/reimbursements
+31 03 2022 - 09:30:34.849 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 09:30:34.863 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1105ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 09:30:34.864 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 09:30:34.895 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 09:30:35.113 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+31 03 2022 - 09:30:35.113 [main] INFO  io.javalin.Javalin - Javalin started in 249ms \o/
+31 03 2022 - 09:30:48.210 [JettyServerThreadPool-15] INFO  mylogfile.log - POST request received for /login
+31 03 2022 - 09:31:20.919 [JettyServerThreadPool-12] INFO  mylogfile.log - GET request received for /users/1/reimbursements/resolved
+31 03 2022 - 11:24:29.309 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 11:24:29.327 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @2100ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 11:24:29.329 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 11:24:29.364 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 11:24:29.574 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+31 03 2022 - 11:24:29.575 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+31 03 2022 - 11:24:29.590 [main] INFO  io.javalin.Javalin - Javalin has stopped
+31 03 2022 - 11:27:14.364 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 11:27:14.377 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @894ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 11:27:14.378 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 11:27:14.395 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 11:27:14.560 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+31 03 2022 - 11:27:14.561 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+31 03 2022 - 11:27:14.570 [main] INFO  io.javalin.Javalin - Javalin has stopped
+31 03 2022 - 11:27:26.815 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 11:27:26.828 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @829ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 11:27:26.830 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 11:27:26.849 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 11:27:27.020 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+31 03 2022 - 11:27:27.020 [main] INFO  io.javalin.Javalin - Javalin started in 191ms \o/
+31 03 2022 - 11:27:36.860 [JettyServerThreadPool-16] INFO  mylogfile.log - POST request received for /login
+31 03 2022 - 11:27:44.900 [JettyServerThreadPool-14] INFO  mylogfile.log - POST request received for /login
+31 03 2022 - 11:28:28.162 [JettyServerThreadPool-13] INFO  mylogfile.log - DELETE request received for /reimbursements/1
+31 03 2022 - 14:58:06.044 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 14:58:06.056 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @829ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 14:58:06.057 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 14:58:06.084 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 14:58:06.249 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+31 03 2022 - 14:58:06.249 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+31 03 2022 - 14:58:06.254 [main] INFO  io.javalin.Javalin - Javalin has stopped
+31 03 2022 - 14:58:31.147 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 14:58:31.157 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @882ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 14:58:31.158 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 14:58:31.175 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 14:58:31.350 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+31 03 2022 - 14:58:31.350 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+31 03 2022 - 14:58:31.360 [main] INFO  io.javalin.Javalin - Javalin has stopped
+31 03 2022 - 14:58:41.338 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+31 03 2022 - 14:58:41.351 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @704ms to org.eclipse.jetty.util.log.Slf4jLog
+31 03 2022 - 14:58:41.353 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+31 03 2022 - 14:58:41.376 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+31 03 2022 - 14:58:41.550 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+31 03 2022 - 14:58:41.550 [main] INFO  io.javalin.Javalin - Javalin started in 198ms \o/
+31 03 2022 - 14:58:44.260 [JettyServerThreadPool-12] INFO  mylogfile.log - POST request received for /login
+31 03 2022 - 14:59:10.111 [JettyServerThreadPool-15] INFO  mylogfile.log - DELETE request received for /reimbursements/10

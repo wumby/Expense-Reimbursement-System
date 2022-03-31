@@ -398,7 +398,7 @@ public class ReimbursementDao {
                     "FROM reimbursements r " +
                     "left join users e " + "on e.USERS_ID = r.reimb_author " +
                     "left join users m " + "on m.USERS_ID = r.reimb_resolver " +
-                    "where e.USERS_ID = ? AND r.reimb_status_id = 2 OR 3 ";
+                    "where e.USERS_ID = ? AND (r.reimb_status_id = 1 OR r.reimb_status_id = 3) ";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,id);
@@ -596,6 +596,27 @@ public class ReimbursementDao {
                 return null;
             }
         }
+    }
+
+
+    public boolean deleteReimbursement(int reimbursement_id) throws SQLException{
+        try (Connection con = ConnectionUtility.getConnection()) {
+            String sql = "DELETE FROM reimbursements WHERE reimb_id = ? ";
+
+            PreparedStatement pstmt = con.prepareStatement(sql);
+
+            pstmt.setInt(1, reimbursement_id);
+
+            int numberOfRecordsDeleted = pstmt.executeUpdate();
+
+            if (numberOfRecordsDeleted == 1) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 }
