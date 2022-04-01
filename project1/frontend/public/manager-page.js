@@ -523,6 +523,7 @@ async function populateReimbursementsTable() {
                         let td6 = document.createElement('td');
                         if(reimbursement.reimbStatusId ==1){
                             td6.innerText = "Approved";
+                            td6.style.color = 'lightgreen';
                         }
                         if(reimbursement.reimbStatusId ==2){
                             td6.innerText = "Pending";
@@ -530,6 +531,7 @@ async function populateReimbursementsTable() {
                         }
                         if(reimbursement.reimbStatusId ==3){
                             td6.innerText = "Rejected";
+                            td6.style.color = 'red';
                         }
                         
                         let td7 = document.createElement('td');
@@ -673,6 +675,7 @@ async function populateReimbursementsTable() {
                             let td6 = document.createElement('td');
                             if(reimbursement.reimbStatusId ==1){
                                 td6.innerText = "Approved";
+                                td6.style.color = 'lightgreen';
                             }
                             if(reimbursement.reimbStatusId ==2){
                                 td6.innerText = "Pending";
@@ -680,6 +683,7 @@ async function populateReimbursementsTable() {
                             }
                             if(reimbursement.reimbStatusId ==3){
                                 td6.innerText = "Rejected";
+                                td6.style.color = 'red';
                             }
                             
                             let td7 = document.createElement('td');
@@ -877,6 +881,7 @@ async function populateReimbursementsTable() {
                                 let td6 = document.createElement('td');
                                 if(reimbursement.reimbStatusId ==1){
                                     td6.innerText = "Approved";
+                                    td6.style.color = 'lightgreen';
                                 }
                                 if(reimbursement.reimbStatusId ==2){
                                     td6.innerText = "Pending";
@@ -884,6 +889,7 @@ async function populateReimbursementsTable() {
                                 }
                                 if(reimbursement.reimbStatusId ==3){
                                     td6.innerText = "Rejected";
+                                    td6.style.color = 'red';
                                 }
                                 
                                 let td7 = document.createElement('td');
