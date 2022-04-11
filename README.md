@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A website for a company that implements a Reimbursement system. Employees can view and add reimbursement requests. Managers can then view all the filtered reimbursements and approve/deny/delete the reimbursements.
+A website for a company that implements a reimbursement system. Employees can view and add reimbursement requests. Managers can then view all the filtered reimbursements and approve/deny/delete the reimbursements.
 
 ## Technologies Used
 
